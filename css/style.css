@@ -46,3 +46,21 @@ p {
   align-items: center; }
   .header__logo-box {
     color: #f0f0f0; }
+
+.section-mazes {
+  padding: 2rem; }
+  .section-mazes__list {
+    overflow: auto;
+    white-space: nowrap; }
+  .section-mazes__card {
+    display: inline-block;
+    height: 500px;
+    width: 300px;
+    padding: 1rem;
+    border: 2px solid #0e0e0e; }
+    .section-mazes__card:not(:last-child) {
+      margin-right: 2rem; }
+
+.section-faq {
+  padding: 2rem;
+  background-color: #0e0e0e; }
