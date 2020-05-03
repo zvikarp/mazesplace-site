@@ -1,0 +1,48 @@
+.btn {
+    &,
+    &:link,
+    &:visited {
+		text-decoration: none;
+		padding: 0.5rem 3rem;
+        display: inline-block;
+		position:relative;
+		
+		
+        //Change for the <button> element
+        border: none;
+        cursor: pointer;
+    }
+    
+    &--white {
+		background: linear-gradient(to right, $color-white 0%, $color-white 50%, $color-black 50%, $color-black 100%);
+		background-size: 200% 100%;
+		background-position: 100% 0;
+		transition: background-position 0.3s;
+        background-color: $color-white;
+		color: $color-black;
+		border: 2px solid $color-black;
+    }
+
+    &--black {
+		background: linear-gradient(to right, $color-black 0%, $color-black 50%, $color-white 50%, $color-white 100%);
+		background-size: 210% 100%;
+		background-position: 100% 0;
+		transition: background-position 0.3s;
+        background-color: $color-black;
+        color: $color-white;
+		border: 2px solid $color-white;
+	}
+	
+	&--icon {
+		padding: 0.5rem;
+
+		img {
+			height: $default-font-size;
+			width: $default-font-size;
+		}
+	}
+
+	&:hover {
+		background-position:0 0;
+	}
+}
