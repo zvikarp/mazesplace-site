@@ -1,12 +1,12 @@
 name: deploy_to_firebase_hosting
 
 on:
-	push:
-	  branches:
-		- hosting
-	pull_request:
-	  branches:
-		- hosting
+  push:
+    branches:
+      - hosting
+  pull_request:
+    branches:
+      - hosting
 
 jobs:
   deploy_to_firebase_hosting:
