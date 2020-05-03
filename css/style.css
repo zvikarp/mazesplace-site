@@ -19,20 +19,22 @@ html {
 
 body {
   box-sizing: border-box;
-  padding: 3rem; }
-  @media only screen and (max-width: 56.25em) {
-    body {
-      padding: 0; } }
+  padding: 0; }
 
 ::selection {
   background-color: #0e0e0e;
   color: #f0f0f0; }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "Cabin", sans-serif;
   font-weight: 400;
   line-height: 1.7;
   color: #0e0e0e; }
+
+h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  text-transform: uppercase; }
 
 p {
   font-size: 1.6rem; }
@@ -41,14 +43,24 @@ p {
   height: 100vh;
   width: 100%;
   background-color: #0e0e0e;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
+  color: #f0f0f0; }
   .header__logo-box {
-    color: #f0f0f0; }
+    align-self: center;
+    text-align: center; }
+  .header__logo {
+    height: 10rem; }
+  .header__button {
+    margin: 4rem 0;
+    padding: 1rem 4rem;
+    border: 2px solid #f0f0f0;
+    align-self: flex-end; }
+  .header__column {
+    height: calc(100vh / 3);
+    display: flex;
+    justify-content: center; }
 
 .section-mazes {
-  padding: 2rem; }
+  padding: 2rem 0; }
   .section-mazes__list {
     overflow: auto;
     white-space: nowrap; }
@@ -57,8 +69,9 @@ p {
     height: 500px;
     width: 300px;
     padding: 1rem;
-    border: 2px solid #0e0e0e; }
-    .section-mazes__card:not(:last-child) {
+    border: 2px solid #0e0e0e;
+    margin-left: 2rem; }
+    .section-mazes__card:last-child {
       margin-right: 2rem; }
 
 .section-faq {

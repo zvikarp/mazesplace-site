@@ -1,5 +1,5 @@
 .section-mazes {
-	padding: 2rem;
+	padding: 2rem 0;
 
 	&__list {
 		overflow: auto;
@@ -12,8 +12,9 @@
 		width: 300px;
 		padding: 1rem;
 		border: 2px solid $color-black;
+		margin-left: 2rem;
 
-		&:not(:last-child) {
+		&:last-child {
 			margin-right: 2rem;
 		}
 	}
