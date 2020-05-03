@@ -1,0 +1,33 @@
+.btn {
+    &,
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+		text-decoration: none;
+		padding: 1rem 4rem;
+        display: inline-block;
+        font-size: $default-font-size;
+
+        //Change for the <button> element
+        border: none;
+        cursor: pointer;
+    }
+    
+    &--white {
+        background-color: $color-white;
+		color: $color-black;
+		border: 2px solid $color-black;
+    }
+
+    &--black {
+        background-color: $color-black;
+        color: $color-white;
+		border: 2px solid $color-white;
+	}
+	
+	&--icon {
+		padding: 0.3rem;
+		width: 35px;
+		height: 35px;
+	}
+}
