@@ -23,7 +23,7 @@ body {
 
 ::selection {
   background-color: #0e0e0e;
-  color: #f0f0f0; }
+  color: #ffffff; }
 
 body {
   font-family: "Cabin", sans-serif;
@@ -41,6 +41,11 @@ h3 {
   font-weight: 600;
   text-transform: uppercase; }
 
+button {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase; }
+
 p {
   font-size: 1.6rem; }
 
@@ -53,34 +58,39 @@ p {
   font-style: normal; }
 
 .btn, .btn:link, .btn:visited {
-  text-transform: uppercase;
   text-decoration: none;
-  padding: 1rem 3rem;
+  padding: 0.5rem 3rem;
   display: inline-block;
-  font-size: 1.6rem;
   border: none;
   cursor: pointer; }
 
 .btn--white {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   color: #0e0e0e;
   border: 2px solid #0e0e0e; }
 
 .btn--black {
   background-color: #0e0e0e;
-  color: #f0f0f0;
-  border: 2px solid #f0f0f0; }
+  color: #ffffff;
+  border: 2px solid #ffffff; }
 
 .btn--icon {
-  padding: 1rem;
-  width: 5rem;
-  height: 5rem; }
+  padding: 0.5rem; }
+  .btn--icon img {
+    height: 1.6rem;
+    width: 1.6rem; }
 
 .header {
   height: 100vh;
   width: 100%;
   background-color: #0e0e0e;
-  color: #f0f0f0; }
+  color: #ffffff; }
+  .header__topbar {
+    top: 2rem;
+    left: 5rem;
+    position: fixed; }
+  .header__icon-button:not(:last-child) {
+    margin-right: 1rem; }
   .header__logo-box {
     align-self: center;
     text-align: center; }
@@ -96,7 +106,7 @@ p {
 
 .section-mazes {
   padding: 10rem 0;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   text-align: center;
   width: 100%; }
   .section-mazes__list {

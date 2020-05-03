@@ -2,11 +2,9 @@
     &,
     &:link,
     &:visited {
-        text-transform: uppercase;
 		text-decoration: none;
-		padding: 1rem 3rem;
+		padding: 0.5rem 3rem;
         display: inline-block;
-        font-size: $default-font-size;
 
         //Change for the <button> element
         border: none;
@@ -26,8 +24,11 @@
 	}
 	
 	&--icon {
-		padding: 1rem;
-		width: 5rem;
-		height: 5rem;
+		padding: 0.5rem;
+
+		img {
+			height: $default-font-size;
+			width: $default-font-size;
+		}
 	}
 }

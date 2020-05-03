@@ -3,6 +3,19 @@
 	width: 100%;
 	background-color: $color-black;
 	color: $color-white;
+
+	&__topbar {
+		top: 2rem;
+		left: 5rem;
+		position: fixed;
+
+	}
+
+	&__icon-button {
+		&:not(:last-child) {
+			margin-right: 1rem;
+		}
+	}
 	
 	&__logo-box {
 		align-self: center;
