@@ -55,7 +55,7 @@ p {
 .btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-  padding: 1rem 4rem;
+  padding: 1rem 3rem;
   display: inline-block;
   font-size: 1.6rem;
   border: none;
@@ -72,9 +72,9 @@ p {
   border: 2px solid #f0f0f0; }
 
 .btn--icon {
-  padding: 0.3rem;
-  width: 35px;
-  height: 35px; }
+  padding: 1rem;
+  width: 5rem;
+  height: 5rem; }
 
 .header {
   height: 100vh;
@@ -87,7 +87,7 @@ p {
   .header__logo {
     height: 10rem; }
   .header__button {
-    margin: 4rem 0;
+    padding: 4rem 0;
     align-self: flex-end; }
   .header__column {
     height: calc(100vh / 3);
@@ -96,18 +96,28 @@ p {
 
 .section-mazes {
   padding: 10rem 0;
-  background-color: #f0f0f0; }
+  background-color: #f0f0f0;
+  text-align: center;
+  width: 100%; }
   .section-mazes__list {
-    overflow: auto;
-    white-space: nowrap; }
+    padding: 0 5rem; }
+    @media only screen and (max-width: 56.25em) {
+      .section-mazes__list {
+        overflow: auto;
+        white-space: nowrap;
+        padding: 0; } }
   .section-mazes__card {
     display: inline-block;
     vertical-align: top;
-    width: 300px;
+    width: 30rem;
     padding: 1rem;
-    margin-left: 2rem; }
-    .section-mazes__card:last-child {
-      margin-right: 2rem; }
+    margin: 1rem; }
+    @media only screen and (max-width: 56.25em) {
+      .section-mazes__card {
+        margin: 0;
+        margin-left: 2rem; }
+        .section-mazes__card:last-child {
+          margin-right: 2rem; } }
     .section-mazes__card__maze {
       width: 100%;
       margin: 1rem 0; }

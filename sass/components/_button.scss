@@ -4,7 +4,7 @@
     &:visited {
         text-transform: uppercase;
 		text-decoration: none;
-		padding: 1rem 4rem;
+		padding: 1rem 3rem;
         display: inline-block;
         font-size: $default-font-size;
 
@@ -26,8 +26,8 @@
 	}
 	
 	&--icon {
-		padding: 0.3rem;
-		width: 35px;
-		height: 35px;
+		padding: 1rem;
+		width: 5rem;
+		height: 5rem;
 	}
 }
