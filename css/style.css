@@ -66,22 +66,26 @@ p {
   cursor: pointer; }
 
 .btn--white {
-  background: linear-gradient(to right, #ffffff 0%, #ffffff 50%, #0e0e0e 50%, #0e0e0e 100%);
+  background: linear-gradient(to right, #0e0e0e 0%, #0e0e0e 50%, #ffffff 50%, #ffffff 100%);
   background-size: 200% 100%;
   background-position: 100% 0;
-  transition: background-position 0.3s;
+  transition: all 0.3s;
   background-color: #ffffff;
   color: #0e0e0e;
   border: 2px solid #0e0e0e; }
+  .btn--white:hover {
+    color: #ffffff; }
 
 .btn--black {
-  background: linear-gradient(to right, #0e0e0e 0%, #0e0e0e 50%, #ffffff 50%, #ffffff 100%);
+  background: linear-gradient(to right, #ffffff 0%, #ffffff 50%, #0e0e0e 50%, #0e0e0e 100%);
   background-size: 210% 100%;
   background-position: 100% 0;
-  transition: background-position 0.3s;
+  transition: all 0.3s;
   background-color: #0e0e0e;
   color: #ffffff;
   border: 2px solid #ffffff; }
+  .btn--black:hover {
+    color: #0e0e0e; }
 
 .btn--icon {
   padding: 0.5rem; }
