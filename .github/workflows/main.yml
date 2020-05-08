@@ -3,10 +3,10 @@ name: deploy_to_firebase_hosting
 on:
   push:
     branches:
-      - hosting
+      - master
   pull_request:
     branches:
-      - hosting
+      - master
 
 jobs:
   deploy_to_firebase_hosting:
