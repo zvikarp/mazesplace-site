@@ -16,4 +16,17 @@ $(document).ready(function () {
 			700
 		);
 	});
+
+	// flashlight effect
+	var headerFlashlight = document.querySelector("#header-mouseover");
+	function updateFlashlight(e) {
+		var x = e.clientX || e.touches[0].clientX;
+		var y = e.clientY || e.touches[0].clientY;
+		var scrollTop =
+			window.pageYOffset || document.documentElement.scrollTop;
+		headerFlashlight.style.setProperty("--cursorX", x + "px");
+		headerFlashlight.style.setProperty("--cursorY", y + scrollTop + "px");
+	}
+	headerFlashlight.addEventListener("mousemove", updateFlashlight);
+	headerFlashlight.addEventListener("touchmove", updateFlashlight);
 });

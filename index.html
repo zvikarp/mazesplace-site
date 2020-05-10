@@ -4,12 +4,13 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" type="image/png" href="/assets/favicon.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;600&display=swap" rel="stylesheet">
 	<script defer src="/__/firebase/7.14.2/firebase-app.js"></script>
 	<script src="/__/firebase/7.14.2/firebase-analytics.js"></script>
 	<script src="/__/firebase/7.14.2/firebase-performance.js"></script>
-    <script defer src="/__/firebase/init.js"></script>
+	<script defer src="/__/firebase/init.js"></script>
 	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
 	<script type="text/javascript" src="scripts/animations.js"></script>
 	<script>var perf = firebase.performance();</script>
@@ -17,28 +18,34 @@
 </head>
 
 <body>
-	<header id="header" class="header">
-		<div id="topbar" class="header__topbar">
-			<button class="btn btn--black btn--icon header__icon-button"><img src="assets/icons/SHARE-WHITE.svg"></button>
-			<button class="btn btn--black btn--icon header__icon-button"><img src="assets/icons/SHARE-WHITE.svg"></button>
-			<button class="btn btn--black btn--icon header__icon-button"><img src="assets/icons/SHARE-WHITE.svg"></button>
-		</div>
-		<div class="header__column">
-		</div>
-		<div class="header__column">
-			<div class="header__logo-box">
-				<img src="assets/images/logo.png" alt="logo" class="header__logo">
-				<h2>Mazesplace</h2>
+	<header  id="hedaer-container">
+		<div id="header-mouseover">
+			<div id="header" class="header">
+				<div id="topbar" class="header__topbar">
+					<button class="btn btn--icon--black btn--icon header__icon-button"><img
+							src="assets/icons/SHARE-WHITE.svg"></button>
+					<button class="btn btn--icon--black btn--icon header__icon-button"><img
+							src="assets/icons/SHARE-WHITE.svg"></button>
+					<button class="btn btn--icon--black btn--icon header__icon-button"><img
+							src="assets/icons/SHARE-WHITE.svg"></button>
+				</div>
+				<div class="header__column">
+				</div>
+				<div class="header__column">
+					<div class="header__logo-box">
+						<img src="assets/images/logo--outline--white.svg" alt="logo" class="header__logo">
+						<h2>Mazesplace</h2>
+					</div>
+				</div>
+				<div class="header__column">
+					<div class="header__button">
+						<button id="mazes-button" class="btn btn--black">
+							Get The Mazes
+						</button>
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="header__column">
-			<div class="header__button">
-			<button id="mazes-button" class="btn btn--black">
-				Get The Mazes
-			</button>
-			</div>
-		</div>
-
 	</header>
 
 	<main>
@@ -48,93 +55,104 @@
 					<h3>Electrifying</h3>
 					<img src="assets/mazes/previews/Electrifying--Preview.png" class="section-mazes__card__maze">
 					<div class="section-mazes__card__actions">
-						<button class="btn btn--white section-mazes__card__download-btn" type="submit" onclick="window.open('assets/mazes/downloadables/Electrifying--Downloadable.pdf')">Download</button>
-						<button class="btn btn--white btn--icon"><img src="assets/icons/SHARE.svg"></button>
+						<button class="btn btn--white section-mazes__card__download-btn" type="submit"
+							onclick="window.open('assets/mazes/downloadables/Electrifying--Downloadable.pdf')">Download</button>
+						<button class="btn btn--icon--white btn--icon"><img src="assets/icons/SHARE.svg"></button>
 					</div>
 				</div>
-				
+
 				<div class="section-mazes__card">
 					<h3>Traffic Jam</h3>
 					<img src="assets/mazes/previews/Traffic_Jam--Preview.png" class="section-mazes__card__maze">
 					<div class="section-mazes__card__actions">
-						<button class="btn btn--white section-mazes__card__download-btn" type="submit" onclick="window.open('assets/mazes/downloadables/Traffic_Jam--Downloadable.pdf')">Download</button>
-						<button class="btn btn--white btn--icon"><img src="assets/icons/SHARE.svg"></button>
+						<button class="btn btn--white section-mazes__card__download-btn" type="submit"
+							onclick="window.open('assets/mazes/downloadables/Traffic_Jam--Downloadable.pdf')">Download</button>
+						<button class="btn btn--icon--white btn--icon"><img src="assets/icons/SHARE.svg"></button>
 					</div>
 				</div>
-				
+
 				<div class="section-mazes__card">
 					<h3>Right Angles</h3>
 					<img src="assets/mazes/previews/Right_Angles--Preview.png" class="section-mazes__card__maze">
 					<div class="section-mazes__card__actions">
-						<button class="btn btn--white section-mazes__card__download-btn" type="submit" onclick="window.open('assets/mazes/downloadables/Right_Angles--Downloadable.pdf')">Download</button>
-						<button class="btn btn--white btn--icon"><img src="assets/icons/SHARE.svg"></button>
+						<button class="btn btn--white section-mazes__card__download-btn" type="submit"
+							onclick="window.open('assets/mazes/downloadables/Right_Angles--Downloadable.pdf')">Download</button>
+						<button class="btn btn--icon--white btn--icon"><img src="assets/icons/SHARE.svg"></button>
 					</div>
 				</div>
-				
+
 				<div class="section-mazes__card">
 					<h3>Barbed Wire</h3>
 					<img src="assets/mazes/previews/Barbed_Wire--Preview.png" class="section-mazes__card__maze">
 					<div class="section-mazes__card__actions">
-						<button class="btn btn--white section-mazes__card__download-btn" type="submit" onclick="window.open('assets/mazes/downloadables/Barbed_Wire--Downloadable.pdf')">Download</button>
-						<button class="btn btn--white btn--icon"><img src="assets/icons/SHARE.svg"></button>
+						<button class="btn btn--white section-mazes__card__download-btn" type="submit"
+							onclick="window.open('assets/mazes/downloadables/Barbed_Wire--Downloadable.pdf')">Download</button>
+						<button class="btn btn--icon--white btn--icon"><img src="assets/icons/SHARE.svg"></button>
 					</div>
 				</div>
-				
+
 				<div class="section-mazes__card">
 					<h3>Fine Lines</h3>
 					<img src="assets/mazes/previews/Fine_Lines--Preview.png" class="section-mazes__card__maze">
 					<div class="section-mazes__card__actions">
-						<button class="btn btn--white section-mazes__card__download-btn" type="submit" onclick="window.open('assets/mazes/downloadables/Fine_Lines--Downloadable.pdf')">Download</button>
-						<button class="btn btn--white btn--icon"><img src="assets/icons/SHARE.svg"></button>
+						<button class="btn btn--white section-mazes__card__download-btn" type="submit"
+							onclick="window.open('assets/mazes/downloadables/Fine_Lines--Downloadable.pdf')">Download</button>
+						<button class="btn btn--icon--white btn--icon"><img src="assets/icons/SHARE.svg"></button>
 					</div>
 				</div>
-				
+
 				<div class="section-mazes__card">
 					<h3>A Question of Angles</h3>
-					<img src="assets/mazes/previews/A_Question_of_Angles--Preview.png" class="section-mazes__card__maze">
+					<img src="assets/mazes/previews/A_Question_of_Angles--Preview.png"
+						class="section-mazes__card__maze">
 					<div class="section-mazes__card__actions">
-						<button class="btn btn--white section-mazes__card__download-btn" type="submit" onclick="window.open('assets/mazes/downloadables/A_Question_of_Angles--Downloadable.pdf')">Download</button>
-						<button class="btn btn--white btn--icon"><img src="assets/icons/SHARE.svg"></button>
+						<button class="btn btn--white section-mazes__card__download-btn" type="submit"
+							onclick="window.open('assets/mazes/downloadables/A_Question_of_Angles--Downloadable.pdf')">Download</button>
+						<button class="btn btn--icon--white btn--icon"><img src="assets/icons/SHARE.svg"></button>
 					</div>
 				</div>
-				
+
 				<div class="section-mazes__card">
 					<h3>Inside the Brain</h3>
 					<img src="assets/mazes/previews/Inside_the_Brain--Preview.png" class="section-mazes__card__maze">
 					<div class="section-mazes__card__actions">
-						<button class="btn btn--white section-mazes__card__download-btn" type="submit" onclick="window.open('assets/mazes/downloadables/Inside_the_Brain--Downloadable.pdf')">Download</button>
-						<button class="btn btn--white btn--icon"><img src="assets/icons/SHARE.svg"></button>
+						<button class="btn btn--white section-mazes__card__download-btn" type="submit"
+							onclick="window.open('assets/mazes/downloadables/Inside_the_Brain--Downloadable.pdf')">Download</button>
+						<button class="btn btn--icon--white btn--icon"><img src="assets/icons/SHARE.svg"></button>
 					</div>
 				</div>
-				
+
 				<div class="section-mazes__card">
 					<h3>Pipeline</h3>
 					<img src="assets/mazes/previews/Pipeline--Preview.png" class="section-mazes__card__maze">
 					<div class="section-mazes__card__actions">
-						<button class="btn btn--white section-mazes__card__download-btn" type="submit" onclick="window.open('assets/mazes/downloadables/Pipeline--Downloadable.pdf')">Download</button>
-						<button class="btn btn--white btn--icon"><img src="assets/icons/SHARE.svg"></button>
+						<button class="btn btn--white section-mazes__card__download-btn" type="submit"
+							onclick="window.open('assets/mazes/downloadables/Pipeline--Downloadable.pdf')">Download</button>
+						<button class="btn btn--icon--white btn--icon"><img src="assets/icons/SHARE.svg"></button>
 					</div>
 				</div>
-				
+
 				<div class="section-mazes__card">
 					<h3>Solder On</h3>
 					<img src="assets/mazes/previews/Solder_On--Preview.png" class="section-mazes__card__maze">
 					<div class="section-mazes__card__actions">
-						<button class="btn btn--white section-mazes__card__download-btn" type="submit" onclick="window.open('assets/mazes/downloadables/Solder_On--Downloadable.pdf')">Download</button>
-						<button class="btn btn--white btn--icon"><img src="assets/icons/SHARE.svg"></button>
+						<button class="btn btn--white section-mazes__card__download-btn" type="submit"
+							onclick="window.open('assets/mazes/downloadables/Solder_On--Downloadable.pdf')">Download</button>
+						<button class="btn btn--icon--white btn--icon"><img src="assets/icons/SHARE.svg"></button>
 					</div>
 				</div>
-				
+
 				<div class="section-mazes__card">
 					<h3>Flower Tangle</h3>
 					<img src="assets/mazes/previews/Flower_Tangle--Preview.png" class="section-mazes__card__maze">
 					<div class="section-mazes__card__actions">
-						<button class="btn btn--white section-mazes__card__download-btn" type="submit" onclick="window.open('assets/mazes/downloadables/Flower_Tangle--Downloadable.pdf')">Download</button>
-						<button class="btn btn--white btn--icon"><img src="assets/icons/SHARE.svg"></button>
+						<button class="btn btn--white section-mazes__card__download-btn" type="submit"
+							onclick="window.open('assets/mazes/downloadables/Flower_Tangle--Downloadable.pdf')">Download</button>
+						<button class="btn btn--icon--white btn--icon"><img src="assets/icons/SHARE.svg"></button>
 					</div>
 				</div>
-				
-				
+
+
 			</div>
 		</section>
 
