@@ -3,7 +3,7 @@
 }
 
 .header {
-	height: 100vh;
+	height: calc(var(--vh, 1vh) * 100);
 	width: 100%;
 	color: $color-white;
 	background: url(/assets/images/site-backdrop.png) no-repeat;
@@ -38,7 +38,7 @@
 	}
 	
 	&__column {
-		height: calc(100vh / 3);
+		height: calc(var(--vh, 1vh) * 100 / 3);
 		display: flex;
 		justify-content: center;
 	}
@@ -47,7 +47,7 @@
 #header-mouseover {
 	cursor: none;
 	--cursorX: 50vw;
-	--cursorY:50vh;
+	--cursorY:calc(var(--vh, 1vh) * 50);
 	
 }
 #header-mouseover:before {
