@@ -1,0 +1,17 @@
+.section-subscribe {
+	padding: 8rem;
+	background-color: $color-black;
+	text-align: center;
+
+	&__signup {
+		padding-top: 2rem;
+		&-email {
+			background-color: $color-white;
+			margin-right: 1rem;
+			text-align: center;
+		}
+		&-submit {
+			display: inline-block;
+		}
+	}
+}

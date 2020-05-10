@@ -17,12 +17,10 @@ h3 {
     text-transform: uppercase;
 }
 
-button {
-	font-size: 1.2rem;
-	font-weight: 600;
-    text-transform: uppercase;
-}
-
 p {
     font-size: $default-font-size;
+}
+
+.text--white {
+	color: $color-white;
 }
