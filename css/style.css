@@ -195,7 +195,7 @@ p {
       margin-right: 1rem; }
 
 .section-subscribe {
-  padding: 10rem 0;
+  padding: 10rem 1rem 9rem 1rem;
   background-color: #0e0e0e;
   text-align: center; }
   .section-subscribe__signup {
@@ -203,12 +203,14 @@ p {
     .section-subscribe__signup-email {
       background-color: #f0f0f0;
       margin-right: 1rem;
+      margin-bottom: 1rem;
       text-align: center; }
     .section-subscribe__signup-submit {
-      display: inline-block; }
+      display: inline-block;
+      margin-bottom: 1rem; }
 
 .section-faq {
-  padding: 10rem 0;
+  padding: 10rem 1rem;
   background-color: #f0f0f0;
   text-align: center;
   width: 100%; }
