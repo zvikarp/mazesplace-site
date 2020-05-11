@@ -25,6 +25,7 @@ $(document).ready(function () {
 	// flashlight effect
 	var headerFlashlight = document.querySelector("#header-mouseover");
 	function updateFlashlight(e) {
+		e.touches = e.touches || [];
 		var x = e.clientX || e.touches[0].clientX;
 		var y = e.clientY || e.touches[0].clientY;
 		var scrollTop =
