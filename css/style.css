@@ -112,10 +112,11 @@ p {
 
 .input {
   text-decoration: none;
-  padding: calc(0.5rem + 2px);
+  padding: 0.5rem;
   display: inline-block;
   position: relative;
   font-size: 1.6rem;
+  line-height: 1.6rem;
   font-weight: 600;
   text-transform: uppercase;
   border: none; }
@@ -193,7 +194,8 @@ p {
           margin-right: 2rem; } }
     .section-mazes__card__maze {
       width: 100%;
-      margin: 1rem 0; }
+      margin: 1rem 0;
+      cursor: pointer; }
     .section-mazes__card__actions {
       width: 100%;
       display: flex; }
