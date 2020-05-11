@@ -61,10 +61,14 @@ p {
   display: inline-block;
   position: relative;
   font-size: 1.6rem;
+  line-height: 1.6rem;
   font-weight: 600;
   text-transform: uppercase;
   border: none;
   cursor: pointer; }
+
+.btn:focus {
+  outline: 0; }
 
 .btn--white {
   background: linear-gradient(to right, #0e0e0e 0%, #0e0e0e 50%, #ffffff00 50%, #ffffff00 100%);
@@ -212,21 +216,25 @@ p {
       display: inline-block;
       margin-bottom: 1rem; }
 
-.section-faq {
-  padding: 10rem 1rem;
+.section-about {
+  padding: 10rem 30%;
   background-color: #f0f0f0;
   text-align: center;
   width: 100%; }
-  .section-faq__list {
-    padding: 1rem; }
-  .section-faq__item {
-    padding: 1rem;
-    margin: 1rem; }
-    .section-faq__item__question {
-      font-size: 2rem;
-      font-weight: 600; }
-    .section-faq__item__answer {
-      font-size: 2rem; }
+  @media only screen and (max-width: 75em) {
+    .section-about {
+      padding: 10rem 20%; } }
+  @media only screen and (max-width: 56.25em) {
+    .section-about {
+      padding: 10rem 10rem; } }
+  .section-about__content {
+    padding-bottom: 4rem; }
+
+.fotter {
+  padding: 02rem;
+  background-color: #0e0e0e;
+  color: #f0f0f0;
+  text-align: center; }
 
 .page-not-found-section {
   background-color: #0e0e0e;

@@ -23,8 +23,8 @@
 		<div id="header-mouseover">
 			<div id="header" class="header">
 				<div id="topbar" class="header__topbar">
-					<button class="btn btn--black header__topbar__button">About</button>
-					<button class="btn btn--black header__topbar__button">Contact</button>
+					<button id="about-button" class="btn btn--black header__topbar__button">About</button>
+					<a href="mailto:zvi@mazesplace.com" class="btn btn--black header__topbar__button">Contact</a>
 					<button class="btn btn--black header__topbar__button">Share</button>
 				</div>
 				<div class="header__column">
@@ -170,35 +170,17 @@
 			</form>
 		</section>
 
-		<section class="section-faq">
-			<div class="section-faq__list">
-				<div class="section-faq__item">
-					<p class="section-faq__item__question">A: This is a question</p>
-					<p class="section-faq__item__answer">Q: The answer is</p>
-				</div>
-
-				<div class="section-faq__item">
-					<p class="section-faq__item__question">the question here:</p>
-					<p class="section-faq__item__answer">the answer is</p>
-				</div>
-
-				<div class="section-faq__item">
-					<p class="section-faq__item__question">the question here:</p>
-					<p class="section-faq__item__answer">the answer is</p>
-				</div>
-
-				<div class="section-faq__item">
-					<p class="section-faq__item__question">the question here:</p>
-					<p class="section-faq__item__answer">the answer is</p>
-				</div>
-
-				<div class="section-faq__item">
-					<p class="section-faq__item__question">the question here:</p>
-					<p class="section-faq__item__answer">the answer is</p>
-				</div>
-			</div>
-
+		<section id="about-section" class="section-about">
+			<p class="section-about__content">This mazes collaction was created for you to enjoy. The mazes are free for personal use, please
+				contact me if you have any questions.</p>
+			<img src="assets/images/me.png">
 		</section>
+		<footer class="fotter">
+			<h3>
+				MAZESPLACE
+				<script>document.write(new Date().getFullYear())</script>
+			</h3>
+		</footer>
 	</main>
 </body>
 

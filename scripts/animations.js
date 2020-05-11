@@ -7,15 +7,20 @@ $(document).ready(function () {
 		);
 	});
 
-	// scroll to section on click mazes button
-	$("#mazes-button").click(function () {
-		$("html, body").animate(
-			{
-				scrollTop: parseInt($("#mazes-section").offset().top),
-			},
-			700
-		);
-	});
+	// scroll to section on click
+	function onClickScrollTo(onClick, scrollTo) {
+		$(onClick).click(function () {
+			$("html, body").animate(
+				{
+					scrollTop: parseInt($(scrollTo).offset().top),
+				},
+				700
+			);
+		});
+	}
+
+	onClickScrollTo("#mazes-button", "#mazes-section");
+	onClickScrollTo("#about-button", "#about-section")
 
 	// flashlight effect
 	var headerFlashlight = document.querySelector("#header-mouseover");

@@ -1,0 +1,18 @@
+.section-about {
+	padding: 10rem 30%;
+	background-color: $color-white;
+	text-align: center;
+	width: 100%;
+
+	@include respond(tab-land) {
+		padding: 10rem 20%;
+	}
+
+	@include respond(tab-port) {
+		padding: 10rem 10rem;
+	}
+
+	&__content {
+		padding-bottom: 4rem;
+	}
+}
