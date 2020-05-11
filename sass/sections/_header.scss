@@ -13,15 +13,16 @@
 
 	&__topbar {
 		top: 2rem;
-		left: 5rem;
+		left: 4rem;
 		position: fixed;
 
+		&__button {
+			border: none;
+			&:not(:last-child) {
+				margin-right: 1rem;
+			}
 	}
 
-	&__icon-button {
-		&:not(:last-child) {
-			margin-right: 1rem;
-		}
 	}
 	
 	&__logo-box {

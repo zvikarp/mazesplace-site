@@ -15,7 +15,7 @@
     }
     
     &--white {
-		background: linear-gradient(to right, $color-black 0%, $color-black 50%, $color-white 50%, $color-white 100%);
+		background: linear-gradient(to right, $color-black 0%, $color-black 50%, $color-transparent 50%, $color-transparent 100%);
 		background-size: 200% 100%;
 		background-position: 100% 0;
 		transition: all 0.3s;
@@ -28,11 +28,11 @@
     }
 	
     &--black {
-		background: linear-gradient(to right, $color-white 0%, $color-white 50%, $color-black 50%, $color-black 100%);
+		background: linear-gradient(to right, $color-white 0%, $color-white 50%, $color-transparent 50%, $color-transparent 100%);
 		background-size: 210% 100%;
 		background-position: 100% 0;
 		transition: all 0.3s;
-        background-color: $color-black;
+        // background-color: $color-black;
         color: $color-white;
 		border: 2px solid $color-white;
 		&:hover{

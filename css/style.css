@@ -67,7 +67,7 @@ p {
   cursor: pointer; }
 
 .btn--white {
-  background: linear-gradient(to right, #0e0e0e 0%, #0e0e0e 50%, #f0f0f0 50%, #f0f0f0 100%);
+  background: linear-gradient(to right, #0e0e0e 0%, #0e0e0e 50%, #ffffff00 50%, #ffffff00 100%);
   background-size: 200% 100%;
   background-position: 100% 0;
   transition: all 0.3s;
@@ -78,11 +78,10 @@ p {
     color: #f0f0f0; }
 
 .btn--black {
-  background: linear-gradient(to right, #f0f0f0 0%, #f0f0f0 50%, #0e0e0e 50%, #0e0e0e 100%);
+  background: linear-gradient(to right, #f0f0f0 0%, #f0f0f0 50%, #ffffff00 50%, #ffffff00 100%);
   background-size: 210% 100%;
   background-position: 100% 0;
   transition: all 0.3s;
-  background-color: #0e0e0e;
   color: #f0f0f0;
   border: 2px solid #f0f0f0; }
   .btn--black:hover {
@@ -130,10 +129,12 @@ p {
   background-color: #0e0e0e; }
   .header__topbar {
     top: 2rem;
-    left: 5rem;
+    left: 4rem;
     position: fixed; }
-  .header__icon-button:not(:last-child) {
-    margin-right: 1rem; }
+    .header__topbar__button {
+      border: none; }
+      .header__topbar__button:not(:last-child) {
+        margin-right: 1rem; }
   .header__logo-box {
     align-self: center;
     text-align: center;
