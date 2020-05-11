@@ -1,11 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mazespalce</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" type="image/png" href="/assets/favicon.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;600&display=swap" rel="stylesheet">
+	<script src="/__/firebase/7.14.2/firebase-app.js"></script>
+	<script src="/__/firebase/7.14.2/firebase-analytics.js"></script>
+	<script src="/__/firebase/7.14.2/firebase-performance.js"></script>
+	<script src="/__/firebase/init.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+	<script type="text/javascript" src="scripts/common.js"></script>
+	<script type="text/javascript" src="scripts/animations.js"></script>
+	<script>var perf = firebase.performance();</script>
+	<title>Mazespalce</title>
 </head>
+
 <body>
-  <div>Welcome to Mazespalce</div>
+	<header id="hedaer-container">
+		<div id="header-mouseover">
+			<div id="header" class="header">
+				<div id="topbar" class="header__topbar">
+					<a href="mailto:zvi@mazesplace.com" class="btn btn--black header__topbar__button">Contact</a>
+					<a href="https://www.instagram.com/mazesplace" class="btn btn--black header__topbar__button">Instagram</a>
+					<a href="https://www.facebook.com/mazesplace" class="btn btn--black header__topbar__button">Facebook</a>
+				</div>
+				<div class="header__column">
+				</div>
+				<div class="header__column">
+					<div class="header__logo-box">
+						<img src="assets/images/logo--outline--white.svg" alt="logo" class="header__logo">
+						<h2>Mazesplace</h2>
+					</div>
+				</div>
+				<div class="header__column">
+					<div class="header__button">
+						<button id="mazes-button" class="btn btn--black">
+							Get The Mazes
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<section id="mazes-section" class="section-mazes">
+			<div class="section-mazes__list">
+				<div class="section-mazes__card">
+					<h3>Electrifying</h3>
+					<img src="assets/mazes/previews/Electrifying--Preview.png" class="section-mazes__card__maze"
+						onclick="window.open('assets/mazes/downloadables/Electrifying--Downloadable.pdf')">
+				</div>
+
+				<div class="section-mazes__card">
+					<h3>Traffic Jam</h3>
+					<img src="assets/mazes/previews/Traffic_Jam--Preview.png" class="section-mazes__card__maze"
+						onclick="window.open('assets/mazes/downloadables/Traffic_Jam--Downloadable.pdf')">
+				</div>
+
+				<div class="section-mazes__card">
+					<h3>Right Angles</h3>
+					<img src="assets/mazes/previews/Right_Angles--Preview.png" class="section-mazes__card__maze"
+						onclick="window.open('assets/mazes/downloadables/Right_Angles--Downloadable.pdf')">
+				</div>
+
+				<div class="section-mazes__card">
+					<h3>Barbed Wire</h3>
+					<img src="assets/mazes/previews/Barbed_Wire--Preview.png" class="section-mazes__card__maze"
+						onclick="window.open('assets/mazes/downloadables/Barbed_Wire--Downloadable.pdf')">
+				</div>
+
+				<div class="section-mazes__card">
+					<h3>Fine Lines</h3>
+					<img src="assets/mazes/previews/Fine_Lines--Preview.png" class="section-mazes__card__maze"
+						onclick="window.open('assets/mazes/downloadables/Fine_Lines--Downloadable.pdf')">
+				</div>
+
+				<div class="section-mazes__card">
+					<h3>A Question of Angles</h3>
+					<img src="assets/mazes/previews/A_Question_of_Angles--Preview.png" class="section-mazes__card__maze"
+						onclick="window.open('assets/mazes/downloadables/A_Question_of_Angles--Downloadable.pdf')">
+				</div>
+
+				<div class="section-mazes__card">
+					<h3>Inside the Brain</h3>
+					<img src="assets/mazes/previews/Inside_the_Brain--Preview.png" class="section-mazes__card__maze"
+						onclick="window.open('assets/mazes/downloadables/Inside_the_Brain--Downloadable.pdf')">
+				</div>
+
+				<div class="section-mazes__card">
+					<h3>Pipeline</h3>
+					<img src="assets/mazes/previews/Pipeline--Preview.png" class="section-mazes__card__maze"
+						onclick="window.open('assets/mazes/downloadables/Pipeline--Downloadable.pdf')">
+				</div>
+
+				<div class="section-mazes__card">
+					<h3>Solder On</h3>
+					<img src="assets/mazes/previews/Solder_On--Preview.png" class="section-mazes__card__maze"
+						onclick="window.open('assets/mazes/downloadables/Solder_On--Downloadable.pdf')">
+				</div>
+
+				<div class="section-mazes__card">
+					<h3>Flower Tangle</h3>
+					<img src="assets/mazes/previews/Flower_Tangle--Preview.png" class="section-mazes__card__maze"
+						onclick="window.open('assets/mazes/downloadables/Flower_Tangle--Downloadable.pdf')">
+				</div>
+
+
+			</div>
+		</section>
+
+		<section class="section-subscribe">
+			<h3 class="text--white">Subscribe to hear the latest form Mazesplace</h3>
+			<form class="section-subscribe__signup"
+				action="https://mazesplace.us16.list-manage.com/subscribe/post?u=3589b7b2db19d2cf1071fbe0f&amp;id=b8454b078e"
+				method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+				<div>
+					<input type="email" value="" name="EMAIL" class="section-subscribe__signup-email input"
+						id="mce-EMAIL" placeholder="email address" required>
+					<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+							name="b_3589b7b2db19d2cf1071fbe0f_b8454b078e" tabindex="-1" value=""></div>
+					<div class="section-subscribe__signup-submit"><input type="submit" value="Subscribe"
+							name="subscribe" class="btn btn--black"></div>
+				</div>
+			</form>
+		</section>
+
+		<section id="about-section" class="section-about">
+			<p class="section-about__content">This mazes collaction was created for you to enjoy. The mazes are free for
+				personal use, please
+				contact me if you have any questions.</p>
+			<img src="assets/images/me.png">
+		</section>
+		<footer class="fotter">
+			<h3>
+				MAZESPLACE
+				<script>document.write(new Date().getFullYear())</script>
+			</h3>
+		</footer>
+	</main>
 </body>
+
 </html>
