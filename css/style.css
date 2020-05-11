@@ -60,7 +60,7 @@ p {
   padding: 0.5rem 3rem;
   display: inline-block;
   position: relative;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: 600;
   text-transform: uppercase;
   border: none;
@@ -112,7 +112,7 @@ p {
   padding: calc(0.5rem + 2px);
   display: inline-block;
   position: relative;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: 600;
   text-transform: uppercase;
   border: none; }
@@ -195,7 +195,7 @@ p {
       margin-right: 1rem; }
 
 .section-subscribe {
-  padding: 8rem;
+  padding: 10rem 0;
   background-color: #0e0e0e;
   text-align: center; }
   .section-subscribe__signup {
@@ -208,5 +208,17 @@ p {
       display: inline-block; }
 
 .section-faq {
-  padding: 2rem;
-  background-color: #f0f0f0; }
+  padding: 10rem 0;
+  background-color: #f0f0f0;
+  text-align: center;
+  width: 100%; }
+  .section-faq__list {
+    padding: 1rem; }
+  .section-faq__item {
+    padding: 1rem;
+    margin: 1rem; }
+    .section-faq__item__question {
+      font-size: 2rem;
+      font-weight: 600; }
+    .section-faq__item__answer {
+      font-size: 2rem; }
