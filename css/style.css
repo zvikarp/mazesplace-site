@@ -125,7 +125,8 @@ p {
   width: 100%;
   color: #f0f0f0;
   background: url(/assets/images/site-backdrop.png) no-repeat;
-  background-size: 100%;
+  background-size: cover;
+  background-position: center center;
   background-color: #0e0e0e; }
   .header__topbar {
     top: 2rem;
@@ -135,7 +136,8 @@ p {
     margin-right: 1rem; }
   .header__logo-box {
     align-self: center;
-    text-align: center; }
+    text-align: center;
+    position: relative; }
   .header__logo {
     height: 10rem; }
   .header__button {
