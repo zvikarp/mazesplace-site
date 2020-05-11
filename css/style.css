@@ -84,7 +84,7 @@ p {
 .btn--black {
   background: linear-gradient(to right, #f0f0f0 0%, #f0f0f0 50%, #ffffff00 50%, #ffffff00 100%);
   background-size: 210% 100%;
-  background-position: 100% 0;
+  background-position: 99% 0;
   transition: all 0.3s;
   color: #f0f0f0;
   border: 2px solid #f0f0f0; }
