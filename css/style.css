@@ -224,3 +224,14 @@ p {
       font-weight: 600; }
     .section-faq__item__answer {
       font-size: 2rem; }
+
+.page-not-found-section {
+  background-color: #0e0e0e;
+  color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100%; }
+  .page-not-found-section__container {
+    text-align: center; }
