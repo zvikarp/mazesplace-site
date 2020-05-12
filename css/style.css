@@ -128,7 +128,7 @@ p {
   height: calc(var(--vh, 1vh) * 100);
   width: 100%;
   color: #f0f0f0;
-  background: url(/assets/images/site-backdrop.png) no-repeat;
+  background: url(/assets/images/site-backdrop.webp) no-repeat;
   background-size: cover;
   background-position: center center;
   background-color: #0e0e0e;
