@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /404.html
+Disallow: /assets/
+Disallow: /css/
+Disallow: /scripts/
+Allow: /assets/mazes
