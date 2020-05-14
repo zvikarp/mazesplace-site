@@ -14,5 +14,9 @@
 
 	&__content {
 		padding-bottom: 4rem;
+
+		& p {
+			padding-bottom: 2rem;
+		}
 	}
 }
