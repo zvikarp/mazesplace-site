@@ -190,6 +190,8 @@ p {
   background-color: #f0f0f0;
   text-align: center;
   width: 100%; }
+  .section-mazes__title {
+    padding-bottom: 6rem; }
   .section-mazes__list {
     padding: 0 5rem; }
     @media only screen and (max-width: 56.25em) {
@@ -212,7 +214,10 @@ p {
     .section-mazes__card__maze {
       width: 100%;
       margin: 1rem 0;
-      cursor: pointer; }
+      cursor: pointer;
+      transition: all .2s; }
+      .section-mazes__card__maze:hover {
+        transform: scale(1.02); }
     .section-mazes__card__actions {
       width: 100%;
       display: flex; }
@@ -248,6 +253,13 @@ p {
       padding: 10rem 10rem; } }
   .section-about__content {
     padding-bottom: 4rem; }
+    .section-about__content p {
+      padding-bottom: 2rem; }
+    .section-about__content a:link,
+    .section-about__content a:visited {
+      color: #0e0e0e;
+      text-decoration: none;
+      border-bottom: 2px solid; }
 
 .fotter {
   padding: 02rem;

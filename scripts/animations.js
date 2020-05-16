@@ -1,10 +1,10 @@
 $(document).ready(function () {
 	// fade topbar on scroll
+
 	$(window).scroll(function () {
-		$("#topbar").css(
-			"opacity",
-			1 - $(window).scrollTop() / $("#header").height() / 0.8
-		);
+		var fade = 1 - $(window).scrollTop() / $("#header").height() / 0.8;
+		$("#topbar").css("opacity", fade);
+		$("#topbar").css("display", fade > 0 ? "inline" : "none");
 	});
 
 	// scroll to section on click
@@ -20,7 +20,7 @@ $(document).ready(function () {
 	}
 
 	onClickScrollTo("#mazes-button", "#mazes-section");
-	onClickScrollTo("#about-button", "#about-section")
+	onClickScrollTo("#about-button", "#about-section");
 
 	// flashlight effect
 	var headerFlashlight = document.querySelector("#header-mouseover");
