@@ -75,6 +75,9 @@ p {
 .btn:focus {
   outline: 0; }
 
+.btn--no-border {
+  border: none !important; }
+
 .btn--white {
   background: linear-gradient(to right, #0e0e0e 0%, #0e0e0e 50%, #ffffff00 50%, #ffffff00 100%);
   background-size: 200% 100%;
@@ -96,6 +99,16 @@ p {
   .btn--black:hover {
     color: #0e0e0e; }
 
+.btn--white--clicked {
+  color: #f0f0f0;
+  border: 2px solid #0e0e0e;
+  background-color: #0e0e0e; }
+
+.btn--black--clicked {
+  color: #0e0e0e;
+  border: 2px solid #f0f0f0;
+  background-color: #f0f0f0; }
+
 .btn--icon {
   padding: 0.5rem; }
   .btn--icon img {
@@ -116,6 +129,17 @@ p {
   background-position: 0 0; }
 
 .input {
+  text-decoration: none;
+  padding: 0.5rem;
+  display: inline-block;
+  position: relative;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none; }
+
+.text-area {
   text-decoration: none;
   padding: 0.5rem;
   display: inline-block;
@@ -260,6 +284,27 @@ p {
       color: #0e0e0e;
       text-decoration: none;
       border-bottom: 2px solid; }
+
+.section-word-maze {
+  padding: 10rem 1rem 9rem 1rem;
+  background-image: linear-gradient(to left, rgba(14, 14, 14, 0.8) 5%, rgba(14, 14, 14, 0.99) 40%, rgba(14, 14, 14, 0.99) 60%, rgba(14, 14, 14, 0.8) 95%), url("/assets/images/generator-background.webp");
+  background-size: cover;
+  background-position: 50% 50%;
+  text-align: center; }
+  .section-word-maze__text {
+    background-color: #f0f0f0;
+    margin: 2rem 0;
+    line-height: 2rem;
+    text-align: center;
+    width: 30%;
+    font-size: 3rem;
+    padding: 1rem; }
+    @media only screen and (max-width: 56.25em) {
+      .section-word-maze__text {
+        width: 90%; } }
+
+#generating-maze {
+  display: none; }
 
 .fotter {
   padding: 02rem;

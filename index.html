@@ -16,6 +16,7 @@
 	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
 	<script type="text/javascript" src="scripts/common.js"></script>
 	<script type="text/javascript" src="scripts/animations.js"></script>
+	<script type="text/javascript" src="scripts/mazeGenerator.js"></script>
 	<script>var perf = firebase.performance();</script>
 	<title>Mazes from Mazespalce</title>
 </head>
@@ -126,25 +127,17 @@
 						alt="Mazesplace Flower_Tangle Maze"
 						onclick="window.open('assets/mazes/downloadables/Flower_Tangle--Downloadable.pdf')">
 				</div>
-
-
 			</div>
 		</section>
 
-		<section class="section-subscribe">
-			<h2 class="text--white">Subscribe to hear the latest form Mazesplace</h2>
-			<form class="section-subscribe__signup"
-				action="https://mazesplace.us16.list-manage.com/subscribe/post?u=3589b7b2db19d2cf1071fbe0f&amp;id=b8454b078e"
-				method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate>
-				<div>
-					<label><input type="email" value="" name="EMAIL" class="section-subscribe__signup-email input"
-							id="mce-EMAIL" placeholder="email address" required></label>
-					<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
-							name="b_3589b7b2db19d2cf1071fbe0f_b8454b078e" tabindex="-1" value=""></div>
-					<div class="section-subscribe__signup-submit"><input type="submit" value="Subscribe"
-							name="subscribe" class="btn btn--black"></div>
-				</div>
-			</form>
+		<section class="section-word-maze">
+			<h2 class="text--white">Enter any text (up to 40 characters) and generate your maze!</h2>
+			<div><textarea class="section-word-maze__text text-area" id="word-maze-input" name="maze-text" rows="4"
+					cols="50"></textarea></div>
+			<div><button onclick={generateWordMaze()} id="generate-maze" class="btn btn--black">Generate Maze</button>
+			</div>
+			<div><a id="generating-maze" class="btn btn--black--clicked">Generating...</a>
+			</div>
 		</section>
 
 		<section id="about-section" class="section-about">
@@ -163,6 +156,23 @@
 			</div>
 			<img src="assets/images/me.webp" alt="Zvi Karp">
 		</section>
+
+		<section class="section-subscribe">
+			<h2 class="text--white">Subscribe to hear the latest form Mazesplace</h2>
+			<form class="section-subscribe__signup"
+				action="https://mazesplace.us16.list-manage.com/subscribe/post?u=3589b7b2db19d2cf1071fbe0f&amp;id=b8454b078e"
+				method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+				<div>
+					<label><input type="email" value="" name="EMAIL" class="section-subscribe__signup-email input"
+							id="mce-EMAIL" placeholder="email address" required></label>
+					<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+							name="b_3589b7b2db19d2cf1071fbe0f_b8454b078e" tabindex="-1" value=""></div>
+					<div class="section-subscribe__signup-submit"><input type="submit" value="Subscribe"
+							name="subscribe" class="btn btn--black"></div>
+				</div>
+			</form>
+		</section>
+
 		<footer class="fotter">
 			<h2>
 				MAZESPLACE
