@@ -1,0 +1,33 @@
+.section-word-maze {
+	padding: 10rem 1rem 9rem 1rem;
+	background-image: linear-gradient(
+			to left,
+			rgba($color-black, 0.8) 5%,
+			rgba($color-black, 0.99) 40%,
+			rgba($color-black, 0.99) 60%,
+			rgba($color-black, 0.8) 95%
+		),
+		url("/assets/images/generator-background.webp");
+	background-size: cover;
+	background-position: 50% 50%;
+	// background-color: $color-black;
+	text-align: center;
+
+	&__text {
+		background-color: $color-white;
+		margin: 2rem 0;
+		line-height: 2rem;
+		text-align: center;
+		width: 30%;
+		font-size: 3rem;
+		padding: 1rem;
+
+		@include respond(tab-port) {
+			width: 90%;
+		}
+	}
+}
+
+#generating-maze {
+	display: none;
+}
