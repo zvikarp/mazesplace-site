@@ -1,7 +1,7 @@
 function generateWordMaze() {
 	const generateButton = document.getElementById("generate-maze");
 	const generatingText = document.getElementById("generating-maze");
-	const mazeText = document.getElementById("word-maze-input").value.toSotring();
+	const mazeText = document.getElementById("word-maze-input").value.toString();
 	const url = "https://zvi.pythonanywhere.com/";
 	const data = { text: mazeText };
 	const params = {
