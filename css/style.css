@@ -259,7 +259,8 @@ ul {
       margin-right: 1rem; }
 
 .section-subscribe {
-  padding: 10rem 1rem 9rem 1rem;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
   background-color: #0e0e0e;
   text-align: center; }
   .section-subscribe__signup {
@@ -316,7 +317,8 @@ ul {
   display: none; }
 
 .fotter {
-  padding: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
   background-color: #0e0e0e;
   color: #f0f0f0;
   text-align: center; }
