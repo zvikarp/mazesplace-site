@@ -312,6 +312,9 @@ ul {
       .section-word-maze__text {
         width: 90%; } }
 
+#generating-maze {
+  display: none; }
+
 .fotter {
   padding: 2rem;
   background-color: #0e0e0e;
