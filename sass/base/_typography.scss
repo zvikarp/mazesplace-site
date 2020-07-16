@@ -26,6 +26,15 @@ p {
 	font-size: $default-font-size;
 }
 
+li {
+	font-size: $default-font-size;
+}
+
+ul {
+	list-style-position: inside;
+	padding-left: 0;
+}
+
 * {
 	font-family: "Cabin", sans-serif;
 }

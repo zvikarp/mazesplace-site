@@ -1,6 +1,18 @@
 .fotter {
-	padding: 02rem;
+	padding: 2rem;
 	background-color: $color-black;
 	color: $color-white;
 	text-align: center;
+
+	&__legal {
+		padding-top: 0.5rem;
+		* {
+			padding: 0 0.5rem;
+		}
+	}
+
+	a {
+		color: $color-white;
+		font-size: 1.2rem;
+	}
 }
