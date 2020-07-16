@@ -16,10 +16,10 @@
 	&__text {
 		background-color: $color-white;
 		margin: 2rem 0;
-		line-height: 2rem;
+		line-height: $default-font-size;
 		text-align: center;
 		width: 30%;
-		font-size: 3rem;
+		font-size: $default-font-size;
 		padding: 1rem;
 
 		@include respond(tab-port) {
@@ -29,5 +29,5 @@
 }
 
 #generating-maze {
-	display: none;
+	// display: none;
 }
