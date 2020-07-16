@@ -28,26 +28,35 @@ body {
 body {
   font-family: "Cabin", sans-serif;
   font-weight: 400;
-  line-height: 1.7;
   color: #0e0e0e; }
 
 h1 {
   font-size: 3rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase; }
 
 h2 {
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase; }
 
 h3 {
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase; }
 
 p {
-  font-size: 1.6rem; }
+  font-size: 1.4rem; }
+
+li {
+  font-size: 1.4rem; }
+
+ul {
+  list-style-position: inside;
+  padding-left: 0; }
+
+* {
+  font-family: "Cabin", sans-serif; }
 
 .text--white {
   color: #f0f0f0; }
@@ -65,9 +74,9 @@ p {
   padding: 0.5rem 3rem;
   display: inline-block;
   position: relative;
-  font-size: 1.6rem;
-  line-height: 1.6rem;
-  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  font-weight: 700;
   text-transform: uppercase;
   border: none;
   cursor: pointer; }
@@ -112,8 +121,8 @@ p {
 .btn--icon {
   padding: 0.5rem; }
   .btn--icon img {
-    height: 1.6rem;
-    width: 1.6rem; }
+    height: 1.4rem;
+    width: 1.4rem; }
 
 .btn--icon--black {
   background-color: #0e0e0e;
@@ -133,9 +142,9 @@ p {
   padding: 0.5rem;
   display: inline-block;
   position: relative;
-  font-size: 1.6rem;
-  line-height: 1.6rem;
-  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  font-weight: 700;
   text-transform: uppercase;
   border: none; }
 
@@ -144,9 +153,9 @@ p {
   padding: 0.5rem;
   display: inline-block;
   position: relative;
-  font-size: 1.6rem;
-  line-height: 1.6rem;
-  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  font-weight: 700;
   text-transform: uppercase;
   border: none; }
 
@@ -294,23 +303,27 @@ p {
   .section-word-maze__text {
     background-color: #f0f0f0;
     margin: 2rem 0;
-    line-height: 2rem;
+    line-height: 1.4rem;
     text-align: center;
     width: 30%;
-    font-size: 3rem;
+    font-size: 1.4rem;
     padding: 1rem; }
     @media only screen and (max-width: 56.25em) {
       .section-word-maze__text {
         width: 90%; } }
 
-#generating-maze {
-  display: none; }
-
 .fotter {
-  padding: 02rem;
+  padding: 2rem;
   background-color: #0e0e0e;
   color: #f0f0f0;
   text-align: center; }
+  .fotter__legal {
+    padding-top: 0.5rem; }
+    .fotter__legal * {
+      padding: 0 0.5rem; }
+  .fotter a {
+    color: #f0f0f0;
+    font-size: 1.2rem; }
 
 .page-not-found-section {
   background-color: #0e0e0e;
@@ -322,3 +335,22 @@ p {
   width: 100%; }
   .page-not-found-section__container {
     text-align: center; }
+
+.document-section__header {
+  text-align: center;
+  width: 100%;
+  background-color: #0e0e0e;
+  color: #f0f0f0;
+  padding: 3rem; }
+
+.document-section__content {
+  padding: 3rem 20%; }
+  @media only screen and (max-width: 56.25em) {
+    .document-section__content {
+      padding: 3rem 10%; } }
+  @media only screen and (max-width: 37.5em) {
+    .document-section__content {
+      padding: 3rem 3rem; } }
+  .document-section__content__header {
+    font-weight: 900;
+    padding: 2rem 0 0.5rem 0; }

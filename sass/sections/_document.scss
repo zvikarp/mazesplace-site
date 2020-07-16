@@ -1,0 +1,26 @@
+.document-section {
+	&__header {
+		text-align: center;
+		width: 100%;
+		background-color: $color-black;
+		color: $color-white;
+		padding: 3rem;
+	}
+
+	&__content {
+		padding: 3rem 20%;
+
+		@include respond(tab-port) {
+			padding: 3rem 10%;
+		}
+
+		@include respond(phone) {
+			padding: 3rem 3rem;
+		}
+
+		&__header {
+			font-weight: 900;
+			padding: 2rem 0 0.5rem 0;
+		}
+	}
+}
