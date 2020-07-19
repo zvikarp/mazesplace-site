@@ -7,4 +7,4 @@
 
 ## Development
 
-- We are following the [commit message guidelines](https://github.com/dannyfritz/commit-message-emoji) form dannyfritz 🤩.
+- We are following the [commit message guidelines](https://github.com/dannyfritz/commit-message-emoji) from dannyfritz 🤩.
