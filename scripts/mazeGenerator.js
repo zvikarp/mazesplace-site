@@ -1,7 +1,9 @@
 function generateWordMaze() {
 	const generateButton = document.getElementById("generate-maze");
 	const generatingText = document.getElementById("generating-maze");
-	const mazeText = document.getElementById("word-maze-input").value.toString();
+	const mazeText = document
+		.getElementById("word-maze-input")
+		.value.toString();
 	const url = "https://mazesplace-server.herokuapp.com/";
 	const data = { text: mazeText };
 	const params = {
@@ -24,7 +26,7 @@ function generateWordMaze() {
 			const objectURL = URL.createObjectURL(avatarAsBlob);
 			generatingText.download = "generated-maze.JPEG";
 			generatingText.href = objectURL;
-			generatingText.click()
+			generatingText.click();
 		})
 		.catch((err) => {
 			console.log(err);
