@@ -12,6 +12,10 @@
 		padding: 10rem 10rem;
 	}
 
+	@include respond(phone) {
+		padding: 10rem 5rem;
+	}
+
 	&__content {
 		padding-bottom: 4rem;
 

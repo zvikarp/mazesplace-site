@@ -47,10 +47,10 @@ h3 {
   text-transform: uppercase; }
 
 p {
-  font-size: 1.4rem; }
+  font-size: 1.6rem; }
 
 li {
-  font-size: 1.4rem; }
+  font-size: 1.6rem; }
 
 ul {
   list-style-position: inside;
@@ -218,6 +218,9 @@ ul {
   position: absolute;
   pointer-events: none;
   background: radial-gradient(circle 10vmax at var(--cursorX) var(--cursorY), rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 80%, rgba(0, 0, 0, 0.5) 90%, rgba(0, 0, 0, 0.9) 100%); }
+  @media only screen and (max-width: 37.5em) {
+    #header-mouseover:before {
+      background: radial-gradient(circle 20vmax at var(--cursorX) var(--cursorY), rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 80%, rgba(0, 0, 0, 0.5) 90%, rgba(0, 0, 0, 0.9) 100%); } }
 
 .section-mazes {
   padding: 10rem 0;
@@ -286,6 +289,9 @@ ul {
   @media only screen and (max-width: 56.25em) {
     .section-about {
       padding: 10rem 10rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .section-about {
+      padding: 10rem 5rem; } }
   .section-about__content {
     padding-bottom: 4rem; }
     .section-about__content p {
