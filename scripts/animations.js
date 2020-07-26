@@ -1,10 +1,20 @@
 $(document).ready(function () {
-	// fade topbar on scroll
-
+	// scroll effects
 	$(window).scroll(function () {
+		// fade topbar on scroll
 		var fade = 1 - $(window).scrollTop() / $("#header").height() / 0.8;
 		$("#topbar").css("opacity", fade);
 		$("#topbar").css("display", fade > 0 ? "inline" : "none");
+
+		// word maze parallax effect
+		const wordMazeSection = $("#section-word-maze");
+		const sectionOffset = wordMazeSection.offset().top;
+		const topViewoprt = sectionOffset - $(window).height();
+		const bottomViewport = sectionOffset + wordMazeSection.height();
+		const windowViewport = (bottomViewport - topViewoprt) * 0.02;
+		const percentage =
+			($(window).scrollTop() - topViewoprt) / windowViewport + 25;
+		wordMazeSection.css("background-position", percentage + "% 50%");
 	});
 
 	// scroll to section on click
