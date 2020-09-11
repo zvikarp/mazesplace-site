@@ -15,10 +15,6 @@
 		cursor: crosshair;
 		-ms-touch-action: none;
 		touch-action: none;
-		
-		@include respond(tab-port) {
-			width: 90%;
-		}
 	}
 }
 

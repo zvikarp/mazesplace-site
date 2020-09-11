@@ -48,8 +48,17 @@ $(document).ready(function () {
 
 	const canvas = document.querySelector("#maze-creator-canvas");
 	const context = canvas.getContext("2d");
+	const screenWidth = window.innerWidth;
 	let lastEvent;
 	let mouseDown = false;
+
+	if (screenWidth < 450) {
+		canvas.height = screenWidth - 50;
+		canvas.width = screenWidth - 50;
+	} else {
+		canvas.height = 500;
+		canvas.width = 500;
+	}
 
 	canvas.addEventListener("mousemove", onMoveOnCanvas);
 	canvas.addEventListener("touchmove", onMoveOnCanvas);
@@ -93,7 +102,7 @@ $(document).ready(function () {
 			context.beginPath();
 			context.moveTo(lastEventX, lastEventY);
 			context.lineTo(x, y);
-			context.lineWidth = 40;
+			context.lineWidth = screenWidth > 450 ? 40 : 20;
 			context.lineCap = "round";
 			context.stroke();
 			lastEvent = e;

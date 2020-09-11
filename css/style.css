@@ -340,9 +340,6 @@ ul {
     cursor: crosshair;
     -ms-touch-action: none;
     touch-action: none; }
-    @media only screen and (max-width: 56.25em) {
-      .section-maze-creator__canvas {
-        width: 90%; } }
 
 #creating-maze {
   display: none; }
