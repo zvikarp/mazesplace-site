@@ -337,7 +337,9 @@ ul {
     padding: 1rem;
     background: #f0f0f0;
     display: block;
-    cursor: crosshair; }
+    cursor: crosshair;
+    -ms-touch-action: none;
+    touch-action: none; }
     @media only screen and (max-width: 56.25em) {
       .section-maze-creator__canvas {
         width: 90%; } }

@@ -63,14 +63,32 @@ $(document).ready(function () {
 	function onMoveOnCanvas(e) {
 		if (mouseDown) {
 			e.touches = e.touches || [];
-			const x = e.offsetX || e.touches[0].clientX;
-			const y = e.offsetY || e.touches[0].clientY;
+			const x =
+				e.offsetX ||
+				e.touches[0].clientX +
+					document.body.scrollLeft +
+					document.documentElement.scrollLeft -
+					canvas.offsetLeft;
+			const y =
+				e.offsetY ||
+				e.touches[0].clientY +
+					document.body.scrollTop +
+					document.documentElement.scrollTop -
+					canvas.offsetTop;
 
 			lastEvent.touches = lastEvent.touches || [];
 			const lastEventX =
-				lastEvent.offsetX || lastEvent.touches[0].clientX;
+				lastEvent.offsetX ||
+				lastEvent.touches[0].clientX +
+					document.body.scrollLeft +
+					document.documentElement.scrollLeft -
+					canvas.offsetLeft;
 			const lastEventY =
-				lastEvent.offsetY || lastEvent.touches[0].clientY;
+				lastEvent.offsetY ||
+				lastEvent.touches[0].clientY +
+					document.body.scrollTop +
+					document.documentElement.scrollTop -
+					canvas.offsetTop;
 
 			context.beginPath();
 			context.moveTo(lastEventX, lastEventY);
