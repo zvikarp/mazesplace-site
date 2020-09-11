@@ -1,0 +1,23 @@
+#section-maze-creator {
+	background-position: 100% 50%;
+}
+
+.section-maze-creator {
+	padding: 10rem 1rem 9rem 1rem;
+	background-color: $color-black;
+	text-align: center;
+
+	&__canvas {
+		margin: 2rem auto;
+		padding: 1rem;
+		background: $color-white;
+		display: block;
+		cursor: crosshair;
+		-ms-touch-action: none;
+		touch-action: none;
+	}
+}
+
+#creating-maze {
+	display: none;
+}

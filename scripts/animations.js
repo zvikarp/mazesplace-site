@@ -7,7 +7,7 @@ $(document).ready(function () {
 		$("#topbar").css("display", fade > 0 ? "inline" : "none");
 
 		// word maze parallax effect
-		const wordMazeSection = $("#section-word-maze");
+		const wordMazeSection = $("#section-maze-generator");
 		const sectionOffset = wordMazeSection.offset().top;
 		const topViewoprt = sectionOffset - $(window).height();
 		const bottomViewport = sectionOffset + wordMazeSection.height();
@@ -45,4 +45,75 @@ $(document).ready(function () {
 	}
 	headerFlashlight.addEventListener("mousemove", updateFlashlight);
 	headerFlashlight.addEventListener("touchmove", updateFlashlight);
+
+	const canvas = document.querySelector("#maze-creator-canvas");
+	const context = canvas.getContext("2d");
+	const screenWidth = window.innerWidth;
+	let lastEvent;
+	let mouseDown = false;
+
+	if (screenWidth < 450) {
+		canvas.height = screenWidth - 50;
+		canvas.width = screenWidth - 50;
+	} else {
+		canvas.height = 500;
+		canvas.width = 500;
+	}
+
+	canvas.addEventListener("mousemove", onMoveOnCanvas);
+	canvas.addEventListener("touchmove", onMoveOnCanvas);
+	canvas.addEventListener("mousedown", onMouseDownOnCanvas);
+	canvas.addEventListener("mouseup", onMouseUpOnCanvas);
+	canvas.addEventListener("mouseleave", onMouseUpOnCanvas);
+
+	canvas.addEventListener("touchstart", onMouseDownOnCanvas);
+	canvas.addEventListener("touchend", onMouseUpOnCanvas);
+
+	function onMoveOnCanvas(e) {
+		if (mouseDown) {
+			e.touches = e.touches || [];
+			const x =
+				e.offsetX ||
+				e.touches[0].clientX +
+					document.body.scrollLeft +
+					document.documentElement.scrollLeft -
+					canvas.offsetLeft;
+			const y =
+				e.offsetY ||
+				e.touches[0].clientY +
+					document.body.scrollTop +
+					document.documentElement.scrollTop -
+					canvas.offsetTop;
+
+			lastEvent.touches = lastEvent.touches || [];
+			const lastEventX =
+				lastEvent.offsetX ||
+				lastEvent.touches[0].clientX +
+					document.body.scrollLeft +
+					document.documentElement.scrollLeft -
+					canvas.offsetLeft;
+			const lastEventY =
+				lastEvent.offsetY ||
+				lastEvent.touches[0].clientY +
+					document.body.scrollTop +
+					document.documentElement.scrollTop -
+					canvas.offsetTop;
+
+			context.beginPath();
+			context.moveTo(lastEventX, lastEventY);
+			context.lineTo(x, y);
+			context.lineWidth = screenWidth > 450 ? 40 : 20;
+			context.lineCap = "round";
+			context.stroke();
+			lastEvent = e;
+		}
+	}
+
+	function onMouseDownOnCanvas(e) {
+		lastEvent = e;
+		mouseDown = true;
+	}
+	function onMouseUpOnCanvas() {
+		mouseDown = false;
+	}
 });
