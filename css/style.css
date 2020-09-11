@@ -325,6 +325,26 @@ ul {
 #generating-maze {
   display: none; }
 
+#section-maze-creator {
+  background-position: 100% 50%; }
+
+.section-maze-creator {
+  padding: 10rem 1rem 9rem 1rem;
+  background-color: #0e0e0e;
+  text-align: center; }
+  .section-maze-creator__canvas {
+    margin: 2rem auto;
+    padding: 1rem;
+    background: #f0f0f0;
+    display: block;
+    cursor: crosshair; }
+    @media only screen and (max-width: 56.25em) {
+      .section-maze-creator__canvas {
+        width: 90%; } }
+
+#creating-maze {
+  display: none; }
+
 .fotter {
   padding-top: 2rem;
   padding-bottom: 4rem;

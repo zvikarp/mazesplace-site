@@ -45,4 +45,48 @@ $(document).ready(function () {
 	}
 	headerFlashlight.addEventListener("mousemove", updateFlashlight);
 	headerFlashlight.addEventListener("touchmove", updateFlashlight);
+
+	const canvas = document.querySelector("#maze-creator-canvas");
+	const context = canvas.getContext("2d");
+	let lastEvent;
+	let mouseDown = false;
+
+	canvas.addEventListener("mousemove", onMoveOnCanvas);
+	canvas.addEventListener("touchmove", onMoveOnCanvas);
+	canvas.addEventListener("mousedown", onMouseDownOnCanvas);
+	canvas.addEventListener("mouseup", onMouseUpOnCanvas);
+	canvas.addEventListener("mouseleave", onMouseUpOnCanvas);
+
+	canvas.addEventListener("touchstart", onMouseDownOnCanvas);
+	canvas.addEventListener("touchend", onMouseUpOnCanvas);
+
+	function onMoveOnCanvas(e) {
+		if (mouseDown) {
+			e.touches = e.touches || [];
+			const x = e.offsetX || e.touches[0].clientX;
+			const y = e.offsetY || e.touches[0].clientY;
+
+			lastEvent.touches = lastEvent.touches || [];
+			const lastEventX =
+				lastEvent.offsetX || lastEvent.touches[0].clientX;
+			const lastEventY =
+				lastEvent.offsetY || lastEvent.touches[0].clientY;
+
+			context.beginPath();
+			context.moveTo(lastEventX, lastEventY);
+			context.lineTo(x, y);
+			context.lineWidth = 40;
+			context.lineCap = "round";
+			context.stroke();
+			lastEvent = e;
+		}
+	}
+
+	function onMouseDownOnCanvas(e) {
+		lastEvent = e;
+		mouseDown = true;
+	}
+	function onMouseUpOnCanvas() {
+		mouseDown = false;
+	}
 });

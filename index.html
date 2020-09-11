@@ -26,6 +26,7 @@
 	<script type="text/javascript" src="scripts/common.js"></script>
 	<script type="text/javascript" src="scripts/animations.js"></script>
 	<script type="text/javascript" src="scripts/mazeGenerator.js"></script>
+	<script type="text/javascript" src="scripts/mazeCreator.js"></script>
 	<script>firebase.performance();</script>
 	<title>Mazes from Mazespalce</title>
 </head>
@@ -152,8 +153,8 @@
 		<section id="section-maze-generator" class="section-maze-generator">
 			<h2 class="text--white">The Maze Generator</h2>
 			<p class="text--white">Enter any text (up to 40 characters) and generate your maze!</p>
-			<div><textarea class="section-maze-generator__text text-area" id="maze-generator-input" name="maze-text" rows="4"
-					cols="50"></textarea></div>
+			<div><textarea class="section-maze-generator__text text-area" id="maze-generator-input" name="maze-text"
+					rows="4" cols="50"></textarea></div>
 			<div><a id="generating-maze" class="btn btn--black--clicked">Generating...</a>
 			</div>
 			<div><a onclick={generateWordMaze()} id="generate-maze" class="btn btn--black">Generate Maze</a>
@@ -177,6 +178,19 @@
 					use, enjoy!</p>
 			</div>
 			<img src="assets/images/me.webp" alt="Zvi Karp">
+		</section>
+
+		<section id="section-maze-creator" class="section-maze-creator">
+			<h2 class="text--white">The Maze Creator</h2>
+			<p class="text--white">Draw a picture and we'll convert it into a maze for you! Just make sure to make it
+				one shape.</p>
+			<div>
+				<canvas width="500" height="500" class="section-maze-creator__canvas" id="maze-creator-canvas"></canvas>
+			</div>
+			<div><a id="creating-maze" class="btn btn--black--clicked">Creating...</a>
+			</div>
+			<div><a onclick={createMaze()} id="create-maze" class="btn btn--black">Create Maze</a>
+			</div>
 		</section>
 
 		<section class="section-subscribe">
