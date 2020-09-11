@@ -2,7 +2,7 @@ function generateWordMaze() {
 	const generateButton = document.getElementById("generate-maze");
 	const generatingText = document.getElementById("generating-maze");
 	const mazeText = document
-		.getElementById("word-maze-input")
+		.getElementById("maze-generator-input")
 		.value.toString();
 	const url = "https://mazesplace-server.herokuapp.com/";
 	const data = { text: mazeText };

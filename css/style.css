@@ -302,15 +302,15 @@ ul {
       text-decoration: none;
       border-bottom: 2px solid; }
 
-#section-word-maze {
+#section-maze-generator {
   background-position: 100% 50%; }
 
-.section-word-maze {
+.section-maze-generator {
   padding: 10rem 1rem 9rem 1rem;
   background-image: linear-gradient(to left, rgba(14, 14, 14, 0.8) 5%, rgba(14, 14, 14, 0.99) 40%, rgba(14, 14, 14, 0.99) 60%, rgba(14, 14, 14, 0.8) 95%), url("/assets/images/generator-background.webp");
   background-size: cover;
   text-align: center; }
-  .section-word-maze__text {
+  .section-maze-generator__text {
     background-color: #f0f0f0;
     margin: 2rem 0;
     line-height: 1.4rem;
@@ -319,7 +319,7 @@ ul {
     font-size: 1.4rem;
     padding: 1rem; }
     @media only screen and (max-width: 56.25em) {
-      .section-word-maze__text {
+      .section-maze-generator__text {
         width: 90%; } }
 
 #generating-maze {

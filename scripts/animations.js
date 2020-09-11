@@ -7,7 +7,7 @@ $(document).ready(function () {
 		$("#topbar").css("display", fade > 0 ? "inline" : "none");
 
 		// word maze parallax effect
-		const wordMazeSection = $("#section-word-maze");
+		const wordMazeSection = $("#section-maze-generator");
 		const sectionOffset = wordMazeSection.offset().top;
 		const topViewoprt = sectionOffset - $(window).height();
 		const bottomViewport = sectionOffset + wordMazeSection.height();
