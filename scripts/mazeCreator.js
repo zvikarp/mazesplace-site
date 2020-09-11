@@ -29,7 +29,8 @@ function createMaze() {
 	creatingText.style.display = "inline";
 	const array = canvasToArray(canvas);
 
-	const url = "http://127.0.0.1:5000/create";
+	const url = "https://mazesplace-server.herokuapp.com/create";
+	// const url = "http://127.0.0.1:5000/create";
 	const params = {
 		headers: {
 			Accept: "application/json",
