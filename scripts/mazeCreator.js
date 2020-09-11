@@ -14,7 +14,9 @@ function canvasToArray(canvas) {
 	scale = canvas.width / 100;
 	for (let x = 0; x < 100; x++) {
 		for (let y = 0; y < 100; y++) {
-			const pixelData = canvas.getContext('2d').getImageData(y * scale, x * scale, 1, 1).data;
+			const pixelData = canvas
+				.getContext("2d")
+				.getImageData(y * scale, x * scale, 1, 1).data;
 			array[x][y] = pixelData[3] == 255;
 		}
 	}
