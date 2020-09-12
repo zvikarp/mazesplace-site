@@ -4,8 +4,8 @@ function generateWordMaze() {
 	const mazeText = document
 		.getElementById("maze-generator-input")
 		.value.toString();
-	// const url = "https://mazesplace-server.herokuapp.com/";
-	const url = "http://127.0.0.1:5000/generate";
+	const url = "https://mazesplace-server.herokuapp.com/generate";
+	// const url = "http://127.0.0.1:5000/generate";
 	const data = { text: mazeText };
 	const params = {
 		headers: {
