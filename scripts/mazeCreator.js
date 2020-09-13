@@ -1,10 +1,15 @@
-// // Clear the canvas when button is clicked
-// function clear_canvas_width() {
-// 	const s = document.getElementById("maze-creator-canvas");
-// 	const w = s.width;
-// 	s.width = 10;
-// 	s.width = w;
-// }
+function clearCreateMazeCanvas() {
+	const canvas = document.getElementById("maze-creator-canvas");
+	const size = getCanvasSize();
+	const context = canvas.getContext("2d");
+	context.clearRect(0, 0, size, size);
+}
+
+function getCanvasSize() {
+	const screenWidth = window.innerWidth;
+	if (screenWidth < 450) return screenWidth - 50;
+	return 500;
+}
 
 function canvasToArray(canvas) {
 	const array = Array(100)
@@ -31,8 +36,8 @@ function createMaze() {
 	creatingText.style.display = "inline";
 	const array = canvasToArray(canvas);
 
-	// const url = "https://mazesplace-server.herokuapp.com/create";
-	const url = "http://127.0.0.1:5000/create";
+	const url = "https://mazesplace-server.herokuapp.com/create";
+	// const url = "http://127.0.0.1:5000/create";
 	const params = {
 		headers: {
 			Accept: "application/json",
@@ -51,6 +56,7 @@ function createMaze() {
 			creatingText.download = "custom-maze.JPEG";
 			creatingText.href = objectURL;
 			creatingText.click();
+			clearCreateMazeCanvas();
 		})
 		.catch((err) => {
 			console.log(err);
