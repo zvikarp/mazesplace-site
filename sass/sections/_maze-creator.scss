@@ -16,6 +16,10 @@
 		-ms-touch-action: none;
 		touch-action: none;
 	}
+
+	&__bottom-text {
+		padding-bottom: 2rem;
+	}
 }
 
 #creating-maze {
