@@ -157,7 +157,9 @@
 					rows="4" cols="50"></textarea></div>
 			<div><a id="generating-maze" class="btn btn--black--clicked">Generating...</a>
 			</div>
-			<div><a onclick={generateWordMaze()} id="generate-maze" class="btn btn--black">Generate Maze</a>
+			<div id="generate-maze">
+				<p class="text--white section-maze-creator__bottom-text">Click "Generate" to download your custom maze.</p>
+				<a onclick={generateWordMaze()} class="btn btn--black">Generate Maze</a>
 			</div>
 		</section>
 
@@ -189,7 +191,9 @@
 			</div>
 			<div><a id="creating-maze" class="btn btn--black--clicked">Creating...</a>
 			</div>
-			<div><a onclick={createMaze()} id="create-maze" class="btn btn--black">Create Maze</a>
+			<div id="create-maze">
+				<p class="text--white section-maze-creator__bottom-text">Click "Create" to download your custom maze.</p>
+				<a onclick={createMaze()} class="btn btn--black">Create Maze</a>
 			</div>
 		</section>
 
@@ -211,7 +215,7 @@
 
 		<footer class="fotter">
 			<p>
-				MAZESPLACE
+				MAZESPLACE ©
 				<script>document.write(new Date().getFullYear())</script>
 			</p>
 			<div class="fotter__legal">

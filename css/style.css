@@ -321,6 +321,8 @@ ul {
     @media only screen and (max-width: 56.25em) {
       .section-maze-generator__text {
         width: 90%; } }
+  .section-maze-generator__bottom-text {
+    padding-bottom: 2rem; }
 
 #generating-maze {
   display: none; }
@@ -340,6 +342,8 @@ ul {
     cursor: crosshair;
     -ms-touch-action: none;
     touch-action: none; }
+  .section-maze-creator__bottom-text {
+    padding-bottom: 2rem; }
 
 #creating-maze {
   display: none; }
