@@ -7,8 +7,12 @@
 	background-color: $color-black;
 	text-align: center;
 
+	&__canvas-area {
+		padding: 2rem 0;
+	}
+
 	&__canvas {
-		margin: 2rem auto;
+		margin: 0 auto;
 		padding: 1rem;
 		background: $color-white;
 		display: block;
@@ -19,6 +23,15 @@
 
 	&__bottom-text {
 		padding-bottom: 2rem;
+	}
+
+	&__action-buttons {
+		padding-top: 0.5rem;
+		a {
+			color: $color-white;
+			font-size: 1.2rem;
+			padding: 0 0.5rem;
+		}
 	}
 }
 
