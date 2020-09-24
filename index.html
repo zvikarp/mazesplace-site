@@ -22,7 +22,7 @@
 	<script src="/__/firebase/7.16.0/firebase-app.js"></script>
 	<script src="/__/firebase/7.16.0/firebase-performance.js"></script>
 	<script src="/__/firebase/init.js"></script>
-	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script type="text/javascript" src="scripts/common.js"></script>
 	<script type="text/javascript" src="scripts/animations.js"></script>
 	<script type="text/javascript" src="scripts/mazeGenerator.js"></script>
@@ -153,8 +153,8 @@
 		<section id="section-maze-generator" class="section-maze-generator">
 			<h2 class="text--white">The Maze Generator</h2>
 			<p class="text--white">Enter any text (up to 40 characters) and generate your maze!</p>
-			<div><textarea class="section-maze-generator__text text-area" id="maze-generator-input" name="maze-text"
-					rows="4" cols="50"></textarea></div>
+			<div><label>Maze Text<textarea class="section-maze-generator__text text-area" id="maze-generator-input" name="maze-text"
+					rows="4" cols="50"></textarea></label></div>
 			<div><a id="generating-maze" class="btn btn--black--clicked">Generating...</a>
 			</div>
 			<div id="generate-maze">
@@ -206,7 +206,7 @@
 				action="https://mazesplace.us16.list-manage.com/subscribe/post?u=3589b7b2db19d2cf1071fbe0f&amp;id=b8454b078e"
 				method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate>
 				<div>
-					<label><input type="email" value="" name="EMAIL" class="section-subscribe__signup-email input"
+					<label>Email<input type="email" value="" name="EMAIL" class="section-subscribe__signup-email input"
 							id="mce-EMAIL" placeholder="email address" required></label>
 					<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
 							name="b_3589b7b2db19d2cf1071fbe0f_b8454b078e" tabindex="-1" value=""></div>
