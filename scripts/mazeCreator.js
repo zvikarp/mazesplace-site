@@ -35,15 +35,16 @@ function createMaze() {
 	createButton.style.display = "none";
 	creatingText.style.display = "inline";
 	const array = canvasToArray(canvas);
+	const flag=0;
 
-	const url = "https://mazesplace-server.herokuapp.com/create";
-	// const url = "http://127.0.0.1:5000/create";
+	// const url = "https://mazesplace-server.herokuapp.com/create";
+	const url = "http://127.0.0.1:5000/create";
 	const params = {
 		headers: {
 			Accept: "application/json",
 			"Content-Type": "application/json",
 		},
-		body: JSON.stringify({ array }),
+		body: JSON.stringify({ flag, array }),
 		method: "POST",
 	};
 
@@ -65,4 +66,46 @@ function createMaze() {
 			createButton.style.display = "inline";
 			creatingText.style.display = "none";
 		});
+}
+/*@ARC*/ 
+function createMazeWithSpesificSolotion() {
+	const canvas = document.querySelector("#maze-creator-canvas");
+	const createButton = document.getElementById("create-maze");
+	const creatingText = document.getElementById("creating-maze");
+	createButton.style.display = "none";
+	creatingText.style.display = "inline";
+	const array = canvasToArray(canvas);
+	const flag=1;
+
+	// const url = "https://mazesplace-server.herokuapp.com/create";
+	const url = "http://127.0.0.1:5000/create";
+	const params = {
+		headers: {
+			Accept: "application/json",
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({ flag ,array }),
+		method: "POST",
+	};
+	//window.alert(params.body)
+
+	fetch(url, params)
+		.then(function (response) {
+			return response.blob();
+		})
+		.then(function (avatarAsBlob) {
+			const objectURL = URL.createObjectURL(avatarAsBlob);
+			creatingText.download = "custom-maze.JPEG";
+			creatingText.href = objectURL;
+			creatingText.click();
+			clearCreateMazeCanvas();
+		})
+		.catch((err) => {
+			console.log(err);
+		})
+		.finally((e) => {
+			createButton.style.display = "inline";
+			creatingText.style.display = "none";
+		});
+		
 }
