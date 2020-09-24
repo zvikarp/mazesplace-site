@@ -10,24 +10,16 @@
 		content="Mazes for free download from mazesplace. Are you looking for some mazes to download for free? this is the place. Here you can download creative and interesting mazes.">
 	<link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap" rel="stylesheet">
 
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
-
-		gtag('config', 'G-57R7K40SMG', { 'client_storage': 'none', 'anonymize_ip': true, });
-
-	</script>
-
 	<script src="/__/firebase/7.16.0/firebase-app.js"></script>
 	<script src="/__/firebase/7.16.0/firebase-performance.js"></script>
+	<script src="/__/firebase/7.16.0/firebase-analytics.js"></script>
 	<script src="/__/firebase/init.js"></script>
-	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-	<script type="text/javascript" src="scripts/common.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="scripts/main.js"></script>
 	<script type="text/javascript" src="scripts/animations.js"></script>
 	<script type="text/javascript" src="scripts/mazeGenerator.js"></script>
 	<script type="text/javascript" src="scripts/mazeCreator.js"></script>
-	<script>firebase.performance();</script>
+	<script>firebase.analytics(); firebase.performance();</script>
 	<title>Mazes from Mazespalce</title>
 </head>
 
@@ -72,39 +64,35 @@
 					<h3>Electrifying</h3>
 					<img src="assets/mazes/previews/Electrifying--Preview.webp" class="section-mazes__card__maze"
 						alt="Mazesplace Electrifying Maze" alt="Mazesplace Electrifying Maze"
-						onclick="window.open('assets/mazes/downloadables/Electrifying--Downloadable.pdf')">
+						onclick="downloadMaze('Electrifying')">
 					<!-- solution is at /assets/mazes/solutions/Electrifying--Solution.pdf -->
 				</div>
 
 				<div class="section-mazes__card">
 					<h3>Traffic Jam</h3>
 					<img src="assets/mazes/previews/Traffic_Jam--Preview.webp" class="section-mazes__card__maze"
-						alt="Mazesplace Traffic Jam Maze"
-						onclick="window.open('assets/mazes/downloadables/Traffic_Jam--Downloadable.pdf')">
+						alt="Mazesplace Traffic Jam Maze" onclick="downloadMaze('Traffic_Jam')">
 					<!-- solution is at /assets/mazes/solutions/Traffic_Jam--Solution.pdf -->
 				</div>
 
 				<div class="section-mazes__card">
 					<h3>Right Angles</h3>
 					<img src="assets/mazes/previews/Right_Angles--Preview.webp" class="section-mazes__card__maze"
-						alt="Mazesplace Right Angles Maze"
-						onclick="window.open('assets/mazes/downloadables/Right_Angles--Downloadable.pdf')">
+						alt="Mazesplace Right Angles Maze" onclick="downloadMaze('Right_Angles')">
 					<!-- solution is at /assets/mazes/solutions/Right_Angles--Solution.pdf -->
 				</div>
 
 				<div class="section-mazes__card">
 					<h3>Barbed Wire</h3>
 					<img src="assets/mazes/previews/Barbed_Wire--Preview.webp" class="section-mazes__card__maze"
-						alt="Mazesplace Barbed Wire Maze"
-						onclick="window.open('assets/mazes/downloadables/Barbed_Wire--Downloadable.pdf')">
+						alt="Mazesplace Barbed Wire Maze" onclick="downloadMaze('Barbed_Wire')">
 					<!-- solution is at /assets/mazes/solutions/Barbed_Wire--Solution.pdf -->
 				</div>
 
 				<div class="section-mazes__card">
 					<h3>Fine Lines</h3>
 					<img src="assets/mazes/previews/Fine_Lines--Preview.webp" class="section-mazes__card__maze"
-						alt="Mazesplace Fine Lines Maze"
-						onclick="window.open('assets/mazes/downloadables/Fine_Lines--Downloadable.pdf')">
+						alt="Mazesplace Fine Lines Maze" onclick="downloadMaze('Fine_Lines')">
 					<!-- solution is at /assets/mazes/solutions/Fine_Lines--Solution.pdf -->
 				</div>
 
@@ -112,39 +100,35 @@
 					<h3>A Question of Angles</h3>
 					<img src="assets/mazes/previews/A_Question_of_Angles--Preview.webp"
 						class="section-mazes__card__maze" alt="Mazesplace A Question of Angles Maze"
-						onclick="window.open('assets/mazes/downloadables/A_Question_of_Angles--Downloadable.pdf')">
+						onclick="downloadMaze('A_Question_of_Angles')">
 					<!-- solution is at /assets/mazes/solutions/A_Question_of_Angles--Solution.pdf -->
 				</div>
 
 				<div class="section-mazes__card">
 					<h3>Inside the Brain</h3>
 					<img src="assets/mazes/previews/Inside_the_Brain--Preview.webp" class="section-mazes__card__maze"
-						alt="Mazesplace Inside the Brain Maze"
-						onclick="window.open('assets/mazes/downloadables/Inside_the_Brain--Downloadable.pdf')">
+						alt="Mazesplace Inside the Brain Maze" onclick="downloadMaze('Inside_the_Brain')">
 					<!-- solution is at /assets/mazes/solutions/Inside_the_Brain--Solution.pdf -->
 				</div>
 
 				<div class="section-mazes__card">
 					<h3>Pipeline</h3>
 					<img src="assets/mazes/previews/Pipeline--Preview.webp" class="section-mazes__card__maze"
-						alt="Mazesplace Pipeline Maze"
-						onclick="window.open('assets/mazes/downloadables/Pipeline--Downloadable.pdf')">
+						alt="Mazesplace Pipeline Maze" onclick="downloadMaze('Pipeline')">
 					<!-- solution is at /assets/mazes/solutions/Pipeline--Solution.pdf -->
 				</div>
 
 				<div class="section-mazes__card">
 					<h3>Solder On</h3>
 					<img src="assets/mazes/previews/Solder_On--Preview.webp" class="section-mazes__card__maze"
-						alt="Mazesplace Solder On Maze"
-						onclick="window.open('assets/mazes/downloadables/Solder_On--Downloadable.pdf')">
+						alt="Mazesplace Solder On Maze" onclick="downloadMaze('Solder_On')">
 					<!-- solution is at /assets/mazes/solutions/Solder_On--Solution.pdf -->
 				</div>
 
 				<div class="section-mazes__card">
 					<h3>Flower Tangle</h3>
 					<img src="assets/mazes/previews/Flower_Tangle--Preview.webp" class="section-mazes__card__maze"
-						alt="Mazesplace Flower_Tangle Maze"
-						onclick="window.open('assets/mazes/downloadables/Flower_Tangle--Downloadable.pdf')">
+						alt="Mazesplace Flower_Tangle Maze" onclick="downloadMaze('Flower_Tangle')">
 					<!-- solution is at /assets/mazes/solutions/Flower_Tangle--Solution.pdf -->
 				</div>
 			</div>
@@ -153,12 +137,13 @@
 		<section id="section-maze-generator" class="section-maze-generator">
 			<h2 class="text--white">The Maze Generator</h2>
 			<p class="text--white">Enter any text (up to 40 characters) and generate your maze!</p>
-			<div><textarea class="section-maze-generator__text text-area" id="maze-generator-input" name="maze-text"
-					rows="4" cols="50"></textarea></div>
+			<div><label>Maze Text<textarea class="section-maze-generator__text text-area" id="maze-generator-input"
+						name="maze-text" rows="4" cols="50"></textarea></label></div>
 			<div><a id="generating-maze" class="btn btn--black--clicked">Generating...</a>
 			</div>
 			<div id="generate-maze">
-				<p class="text--white section-maze-creator__bottom-text">Click "Generate" to download your custom maze.</p>
+				<p class="text--white section-maze-creator__bottom-text">Click "Generate" to download your custom maze.
+				</p>
 				<a onclick={generateWordMaze()} class="btn btn--black">Generate Maze</a>
 			</div>
 		</section>
@@ -186,13 +171,17 @@
 			<h2 class="text--white">The Maze Creator</h2>
 			<p class="text--white">Draw a picture and we'll convert it into a maze for you! Just make sure to make it
 				one shape.</p>
-			<div>
+			<div class="section-maze-creator__canvas-area">
 				<canvas class="section-maze-creator__canvas" id="maze-creator-canvas"></canvas>
+				<div class="section-maze-creator__action-buttons">
+					<a href="javascript:clearCreateMazeCanvas()">Clear Canvas</a>
+				</div>
 			</div>
 			<div><a id="creating-maze" class="btn btn--black--clicked">Creating...</a>
 			</div>
 			<div id="create-maze">
-				<p class="text--white section-maze-creator__bottom-text">Click "Create" to download your custom maze.</p>
+				<p class="text--white section-maze-creator__bottom-text">Click "Create" to download your custom maze.
+				</p>
 				<a onclick={createMaze()} class="btn btn--black">Create Maze</a>
 			</div>
 		</section>
@@ -203,7 +192,7 @@
 				action="https://mazesplace.us16.list-manage.com/subscribe/post?u=3589b7b2db19d2cf1071fbe0f&amp;id=b8454b078e"
 				method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate>
 				<div>
-					<label><input type="email" value="" name="EMAIL" class="section-subscribe__signup-email input"
+					<label>Email<input type="email" value="" name="EMAIL" class="section-subscribe__signup-email input"
 							id="mce-EMAIL" placeholder="email address" required></label>
 					<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
 							name="b_3589b7b2db19d2cf1071fbe0f_b8454b078e" tabindex="-1" value=""></div>

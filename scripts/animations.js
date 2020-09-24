@@ -35,13 +35,18 @@ $(document).ready(function () {
 	// flashlight effect
 	var headerFlashlight = document.querySelector("#header-mouseover");
 	function updateFlashlight(e) {
-		e.touches = e.touches || [];
-		var x = e.clientX || e.touches[0].clientX;
-		var y = e.clientY || e.touches[0].clientY;
-		var scrollTop =
-			window.pageYOffset || document.documentElement.scrollTop;
-		headerFlashlight.style.setProperty("--cursorX", x + "px");
-		headerFlashlight.style.setProperty("--cursorY", y + scrollTop + "px");
+		try {
+			e.touches = e.touches || [];
+			const x = e.clientX || e.touches[0].clientX;
+			const y = e.clientY || e.touches[0].clientY;
+			const scrollTop =
+				window.pageYOffset || document.documentElement.scrollTop;
+			headerFlashlight.style.setProperty("--cursorX", x + "px");
+			headerFlashlight.style.setProperty(
+				"--cursorY",
+				y + scrollTop + "px"
+			);
+		} catch (error) {}
 	}
 	headerFlashlight.addEventListener("mousemove", updateFlashlight);
 	headerFlashlight.addEventListener("touchmove", updateFlashlight);
