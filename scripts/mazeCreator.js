@@ -57,6 +57,7 @@ function createMaze() {
 			creatingText.href = objectURL;
 			creatingText.click();
 			clearCreateMazeCanvas();
+			logEvent("create_maze", "maze_creator", "maze_creator");
 		})
 		.catch((err) => {
 			console.log(err);
