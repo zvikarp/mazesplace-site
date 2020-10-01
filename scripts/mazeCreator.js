@@ -1,73 +1,81 @@
 function clearCreateMazeCanvas() {
-  const canvas = document.getElementById("maze-creator-canvas");
-  const size = getCanvasSize();
-  const context = canvas.getContext("2d");
-  context.clearRect(0, 0, size, size);
+	const canvas = document.getElementById("maze-creator-canvas");
+	const size = getCanvasSize();
+	const context = canvas.getContext("2d");
+	context.clearRect(0, 0, size, size);
 }
 
 function getCanvasSize() {
-  const screenWidth = window.innerWidth;
-  if (screenWidth < 450)
-    return screenWidth - 50;
-  return 500;
+	const screenWidth = window.innerWidth;
+	if (screenWidth < 450) return screenWidth - 50;
+	return 500;
 }
 
 function getBoardSize() {
-  const boardSizeSelector = document.getElementById("maze-creator-board-size");
-  const size =
-      boardSizeSelector.options[boardSizeSelector.selectedIndex].value.split(
-          "x");
-  return [ parseInt(size[0]), parseInt(size[1]) ];
+	const boardSizeSelector = document.getElementById(
+		"maze-creator-board-size"
+	);
+	const size = boardSizeSelector.options[
+		boardSizeSelector.selectedIndex
+	].value.split("x");
+	return [parseInt(size[0]), parseInt(size[1])];
 }
 
 function canvasToArray(canvas) {
-  boardSize = getBoardSize();
+	boardSize = getBoardSize();
 
-  const array = Array(boardSize[0]).fill().map(() => Array(boardSize[1]));
+	const array = Array(boardSize[0])
+		.fill()
+		.map(() => Array(boardSize[1]));
 
-  scale = canvas.width / boardSize[0];
-  for (let x = 0; x < boardSize[0]; x++) {
-    for (let y = 0; y < boardSize[1]; y++) {
-      const pixelData =
-          canvas.getContext("2d").getImageData(y * scale, x * scale, 1, 1).data;
-      array[x][y] = pixelData[3] == 255;
-    }
-  }
-  return array;
+	scale = canvas.width / boardSize[0];
+	for (let x = 0; x < boardSize[0]; x++) {
+		for (let y = 0; y < boardSize[1]; y++) {
+			const pixelData = canvas
+				.getContext("2d")
+				.getImageData(y * scale, x * scale, 1, 1).data;
+			array[x][y] = pixelData[3] == 255;
+		}
+	}
+	return array;
 }
 
 function createMaze() {
-  const canvas = document.querySelector("#maze-creator-canvas");
-  const createButton = document.getElementById("create-maze");
-  const creatingText = document.getElementById("creating-maze");
-  createButton.style.display = "none";
-  creatingText.style.display = "inline";
-  const array = canvasToArray(canvas);
+	const canvas = document.querySelector("#maze-creator-canvas");
+	const createButton = document.getElementById("create-maze");
+	const creatingText = document.getElementById("creating-maze");
+	createButton.style.display = "none";
+	creatingText.style.display = "inline";
+	const array = canvasToArray(canvas);
 
-  const url = "https://mazesplace-server.herokuapp.com/create";
-  // const url = "http://127.0.0.1:5000/create";
-  const params = {
-    headers : {
-      Accept : "application/json",
-      "Content-Type" : "application/json",
-    },
-    body : JSON.stringify({array}),
-    method : "POST",
-  };
+	const url = "https://mazesplace-server.herokuapp.com/create";
+	// const url = "http://127.0.0.1:5000/create";
+	const params = {
+		headers: {
+			Accept: "application/json",
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({ array }),
+		method: "POST",
+	};
 
-  fetch(url, params)
-      .then(function(response) { return response.blob(); })
-      .then(function(avatarAsBlob) {
-        const objectURL = URL.createObjectURL(avatarAsBlob);
-        creatingText.download = "custom-maze.JPEG";
-        creatingText.href = objectURL;
-        creatingText.click();
-        clearCreateMazeCanvas();
-        logEvent("create_maze", "maze_creator", "maze_creator");
-      })
-      .catch((err) => { console.log(err); })
-      .finally((e) => {
-        createButton.style.display = "inline";
-        creatingText.style.display = "none";
-      });
+	fetch(url, params)
+		.then(function (response) {
+			return response.blob();
+		})
+		.then(function (avatarAsBlob) {
+			const objectURL = URL.createObjectURL(avatarAsBlob);
+			creatingText.download = "custom-maze.JPEG";
+			creatingText.href = objectURL;
+			creatingText.click();
+			clearCreateMazeCanvas();
+			logEvent("create_maze", "maze_creator", "maze_creator");
+		})
+		.catch((err) => {
+			console.log(err);
+		})
+		.finally((e) => {
+			createButton.style.display = "inline";
+			creatingText.style.display = "none";
+		});
 }
