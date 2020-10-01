@@ -1,0 +1,11 @@
+.select {
+	border: none;
+	background-color: transparent;
+	text-decoration: underline;
+	padding: 0;
+	color: $color-white;
+
+	& option {
+		background-color: $color-black;
+	}
+}
