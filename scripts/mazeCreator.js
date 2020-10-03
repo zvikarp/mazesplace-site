@@ -24,13 +24,13 @@ function getBoardSize() {
 function canvasToArray(canvas) {
 	boardSize = getBoardSize();
 
-	const array = Array(boardSize[0])
+	const array = Array(boardSize[1])
 		.fill()
-		.map(() => Array(boardSize[1]));
+		.map(() => Array(boardSize[0]));
 
 	scale = canvas.width / boardSize[0];
-	for (let x = 0; x < boardSize[0]; x++) {
-		for (let y = 0; y < boardSize[1]; y++) {
+	for (let x = 0; x < boardSize[1]; x++) {
+		for (let y = 0; y < boardSize[0]; y++) {
 			const pixelData = canvas
 				.getContext("2d")
 				.getImageData(y * scale, x * scale, 1, 1).data;
@@ -68,7 +68,6 @@ function createMaze() {
 			creatingText.download = "custom-maze.JPEG";
 			creatingText.href = objectURL;
 			creatingText.click();
-			clearCreateMazeCanvas();
 			logEvent("create_maze", "maze_creator", "maze_creator");
 		})
 		.catch((err) => {
