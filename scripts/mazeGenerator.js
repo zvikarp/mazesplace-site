@@ -28,6 +28,7 @@ function generateWordMaze() {
 			generatingText.download = "generated-maze.JPEG";
 			generatingText.href = objectURL;
 			generatingText.click();
+			logEvent("create_maze", "maze_generator", "maze_generator");
 		})
 		.catch((err) => {
 			console.log(err);

@@ -35,22 +35,57 @@ $(document).ready(function () {
 	// flashlight effect
 	var headerFlashlight = document.querySelector("#header-mouseover");
 	function updateFlashlight(e) {
-		e.touches = e.touches || [];
-		var x = e.clientX || e.touches[0].clientX;
-		var y = e.clientY || e.touches[0].clientY;
-		var scrollTop =
-			window.pageYOffset || document.documentElement.scrollTop;
-		headerFlashlight.style.setProperty("--cursorX", x + "px");
-		headerFlashlight.style.setProperty("--cursorY", y + scrollTop + "px");
+		try {
+			e.touches = e.touches || [];
+			const x = e.clientX || e.touches[0].clientX;
+			const y = e.clientY || e.touches[0].clientY;
+			const scrollTop =
+				window.pageYOffset || document.documentElement.scrollTop;
+			headerFlashlight.style.setProperty("--cursorX", x + "px");
+			headerFlashlight.style.setProperty(
+				"--cursorY",
+				y + scrollTop + "px"
+			);
+		} catch (error) {}
 	}
 	headerFlashlight.addEventListener("mousemove", updateFlashlight);
 	headerFlashlight.addEventListener("touchmove", updateFlashlight);
+
+	function updateBoardSize(newSize) {
+		const width = newSize.split("x")[0];
+		const height = newSize.split("x")[1];
+		const ratio = height / width;
+		const screenWidth = window.innerWidth;
+
+		if (screenWidth < 450) {
+			canvas.height = (screenWidth - 50) * ratio;
+			canvas.width = screenWidth - 50;
+		} else {
+			canvas.height = 500 * ratio;
+			canvas.width = 500;
+		}
+	}
+
+	function updateBrushSize(newSize) {
+		brushSize = screenWidth > 450 ? newSize : newSize / 2;
+	}
 
 	const canvas = document.querySelector("#maze-creator-canvas");
 	const context = canvas.getContext("2d");
 	const screenWidth = window.innerWidth;
 	let lastEvent;
 	let mouseDown = false;
+	let brushSize = 0;
+
+	updateBoardSize("100x100");
+	updateBrushSize(40);
+
+	$("#maze-creator-board-size").on("change", function (e) {
+		updateBoardSize(this.value);
+	});
+	$("#maze-creator-brush-size").on("change", function (e) {
+		updateBrushSize(parseInt(this.value));
+	});
 
 	if (screenWidth < 450) {
 		canvas.height = screenWidth - 50;
@@ -102,7 +137,7 @@ $(document).ready(function () {
 			context.beginPath();
 			context.moveTo(lastEventX, lastEventY);
 			context.lineTo(x, y);
-			context.lineWidth = screenWidth > 450 ? 40 : 20;
+			context.lineWidth = brushSize;
 			context.lineCap = "round";
 			context.stroke();
 			lastEvent = e;

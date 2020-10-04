@@ -160,6 +160,15 @@ ul {
   text-transform: uppercase;
   border: none; }
 
+.select {
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+  padding: 0;
+  color: #f0f0f0; }
+  .select option {
+    background-color: #0e0e0e; }
+
 .hedaer-container {
   position: relative; }
 
@@ -347,11 +356,14 @@ ul {
   .section-maze-creator__bottom-text {
     padding-bottom: 2rem; }
   .section-maze-creator__action-buttons {
-    padding-top: 0.5rem; }
-    .section-maze-creator__action-buttons a {
+    justify-content: center;
+    padding-top: 0.5rem;
+    display: flex; }
+    .section-maze-creator__action-buttons > * {
+      margin: 0 1rem; }
+    .section-maze-creator__action-buttons * {
       color: #f0f0f0;
-      font-size: 1.2rem;
-      padding: 0 0.5rem; }
+      font-size: 1.5rem; }
 
 #creating-maze {
   display: none; }
