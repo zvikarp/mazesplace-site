@@ -21,7 +21,7 @@ function getBoardSize() {
 	return [parseInt(size[0]), parseInt(size[1])];
 }
 
-function canvasToArray(canvas) {
+function canvasToArray(canvas , flip) {
 	boardSize = getBoardSize();
 
 	const array = Array(boardSize[1])
@@ -35,19 +35,25 @@ function canvasToArray(canvas) {
 				.getContext("2d")
 				.getImageData(y * scale, x * scale, 1, 1).data;
 			array[x][y] = pixelData[3] == 255;
+			if(flip){
+				array[x][y]=  !(array[x][y]);
+			}
+
 		}
 	}
+	
 	return array;
 }
 
 function createMaze() {
 	const canvas = document.querySelector("#maze-creator-canvas");
+	const boardSizeSelector = document.getElementById("maze-creator-type");
 	const createButton = document.getElementById("create-maze");
 	const creatingText = document.getElementById("creating-maze");
 	createButton.style.display = "none";
 	creatingText.style.display = "inline";
-	const array = canvasToArray(canvas);
-	const flag=0;
+	const array = canvasToArray(canvas, boardSizeSelector.selectedIndex == 1 );
+	const flag=boardSizeSelector.selectedIndex>1? 1:0;
 
 	// const url = "https://mazesplace-server.herokuapp.com/create";
 	const url = "http://127.0.0.1:5000/create";

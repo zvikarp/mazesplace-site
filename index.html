@@ -177,12 +177,13 @@
 					<div>
 						Board Size:
 						<select name="board size" id="maze-creator-board-size" class="select">
-							<option value="100x100">100x100</option>
+							<option value="100x100">100x10125450</option>
 							<option value="150x150">150x150</option>
 							<option value="200x100">200x100</option>
 							<option value="300x100">300x100</option>
 						</select>
 					</div>
+					<h2 class="text--white">|</h2>
 					<div>
 						Brush Size:
 						<select name="brush size" id="maze-creator-brush-size" class="select">
@@ -190,6 +191,16 @@
 							<option value="20">Small</option>
 						</select>
 					</div>
+					<h2 class="text--white">|</h2>
+					<div>
+						Board Size:
+						<select name="maze type" id="maze-creator-type" class="select">
+							<option value="Black to maze">Black to maze</option>
+							<option value="White to maze">White to maze</option>
+							<option value="solotion of maze">solotion of maze</option>
+						</select>
+					</div>
+					<h2 class="text--white">|</h2>
 					<a href="javascript:clearCreateMazeCanvas()">Clear Canvas</a>
 				</div>
 			</div>
@@ -199,11 +210,6 @@
 				<p class="text--white section-maze-creator__bottom-text">Click "Create" to download your custom maze.
 				</p>
 				<a onclick={createMaze()} class="btn btn--black">Create Maze</a>
-			</div>
-			<!--@ARC-->
-			<div id="create-maze-with-spesipic-solotion">
-				<p class="text--white section-maze-creator__bottom-text"></p>
-				<a onclick={createMazeWithSpesificSolotion()} class="btn btn--black">Create Maze With spesific solotion</a>
 			</div>
 		</section>
 
