@@ -11,14 +11,26 @@ function getCanvasSize() {
 	return 500;
 }
 
-function canvasToArray(canvas) {
-	const array = Array(100)
-		.fill()
-		.map(() => Array(100));
+function getBoardSize() {
+	const boardSizeSelector = document.getElementById(
+		"maze-creator-board-size"
+	);
+	const size = boardSizeSelector.options[
+		boardSizeSelector.selectedIndex
+	].value.split("x");
+	return [parseInt(size[0]), parseInt(size[1])];
+}
 
-	scale = canvas.width / 100;
-	for (let x = 0; x < 100; x++) {
-		for (let y = 0; y < 100; y++) {
+function canvasToArray(canvas) {
+	boardSize = getBoardSize();
+
+	const array = Array(boardSize[1])
+		.fill()
+		.map(() => Array(boardSize[0]));
+
+	scale = canvas.width / boardSize[0];
+	for (let x = 0; x < boardSize[1]; x++) {
+		for (let y = 0; y < boardSize[0]; y++) {
 			const pixelData = canvas
 				.getContext("2d")
 				.getImageData(y * scale, x * scale, 1, 1).data;
@@ -56,7 +68,6 @@ function createMaze() {
 			creatingText.download = "custom-maze.JPEG";
 			creatingText.href = objectURL;
 			creatingText.click();
-			clearCreateMazeCanvas();
 			logEvent("create_maze", "maze_creator", "maze_creator");
 		})
 		.catch((err) => {

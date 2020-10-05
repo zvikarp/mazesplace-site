@@ -26,11 +26,15 @@
 	}
 
 	&__action-buttons {
+		justify-content: center;
 		padding-top: 0.5rem;
-		a {
+		display: flex;
+		& > * {
+			margin: 0 1rem;
+		}
+		& * {
 			color: $color-white;
-			font-size: 1.2rem;
-			padding: 0 0.5rem;
+			font-size: 1.5rem;
 		}
 	}
 }
