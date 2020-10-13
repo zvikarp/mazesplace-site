@@ -11,14 +11,32 @@
 		padding: 2rem 0;
 	}
 
+	&__canvases {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+
 	&__canvas {
 		margin: 0 auto;
-		padding: 1rem;
-		background: $color-white;
 		display: block;
 		cursor: crosshair;
 		-ms-touch-action: none;
 		touch-action: none;
+		grid-row-start: 1;
+		grid-column-start: 1;
+	}
+
+	&__point {
+		pointer-events: auto;
+		position: absolute;
+		font-size: 8rem;
+		line-height: 4rem;
+		cursor: move;
+		&:after {
+			content: "\d7";
+			-webkit-text-stroke-width: 2px;
+			-webkit-text-stroke-color: $color-white;
+		}
 	}
 
 	&__bottom-text {
@@ -41,4 +59,15 @@
 
 #creating-maze {
 	display: none;
+}
+
+#maze-creator-canvas {
+	z-index: 0;
+	background: $color-white;
+}
+
+#maze-creator-draggable {
+	z-index: 1;
+	pointer-events: none;
+	position: relative;
 }

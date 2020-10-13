@@ -170,7 +170,13 @@
 			<p class="text--white">Draw a picture and we'll convert it into a maze for you! Just make sure to make it
 				one shape.</p>
 			<div class="section-maze-creator__canvas-area">
-				<canvas class="section-maze-creator__canvas" id="maze-creator-canvas"></canvas>
+				<div class="section-maze-creator__canvases">
+					<canvas class="section-maze-creator__canvas" id="maze-creator-canvas"></canvas>
+					<div class="section-maze-creator__canvas" id="maze-creator-draggable">
+						<div id="maze-creator-start" class="section-maze-creator__point"></div>
+						<div id="maze-creator-end" class="section-maze-creator__point"></div>
+					</div>
+				</div>
 				<div class="section-maze-creator__action-buttons">
 					<div>
 						Board Size:

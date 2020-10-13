@@ -51,104 +51,148 @@ $(document).ready(function () {
 	headerFlashlight.addEventListener("mousemove", updateFlashlight);
 	headerFlashlight.addEventListener("touchmove", updateFlashlight);
 
-	function updateBoardSize(newSize) {
-		const width = newSize.split("x")[0];
-		const height = newSize.split("x")[1];
-		const ratio = height / width;
-		const screenWidth = window.innerWidth;
-
-		if (screenWidth < 450) {
-			canvas.height = (screenWidth - 50) * ratio;
-			canvas.width = screenWidth - 50;
-		} else {
-			canvas.height = 500 * ratio;
-			canvas.width = 500;
-		}
+	// maze creator
+	function updateBoardsSize(newSize) {
+		const ratio = newSize[1] / newSize[0];
+		const newWidth = screenWidth < 450 ? screenWidth - 50 : 500;
+		const newHeight = newWidth * ratio;
+		mazeCanvas.height = newHeight;
+		mazeCanvas.width = newWidth;
+		randomizePointsLocation();
+		draggableArea.style.height = `${newHeight.toString()}px`;
+		draggableArea.style.width = `${newWidth.toString()}px`;
 	}
 
 	function updateBrushSize(newSize) {
 		brushSize = screenWidth > 450 ? newSize : newSize / 2;
 	}
 
-	const canvas = document.querySelector("#maze-creator-canvas");
-	const context = canvas.getContext("2d");
-	const screenWidth = window.innerWidth;
-	let lastEvent;
-	let mouseDown = false;
-	let brushSize = 0;
+	function randomizePointsLocation() {
+		Object.values(pnts).forEach((pnt) => {
+			const rndWidth = Math.floor(
+				Math.random() * (mazeCanvas.width - pnts.str.elmt.clientWidth)
+			);
+			const rndHeight = Math.floor(
+				Math.random() * (mazeCanvas.height - pnts.str.elmt.clientHeight)
+			);
+			movePointsToXY(pnt, rndWidth, rndHeight);
+		});
+	}
 
-	updateBoardSize("100x100");
+	const mazeCanvas = document.querySelector("#maze-creator-canvas");
+	const draggableArea = document.querySelector("#maze-creator-draggable");
+	const strElmt = document.querySelector("#maze-creator-start");
+	const endElmt = document.querySelector("#maze-creator-end");
+	const canvasCtx = mazeCanvas.getContext("2d");
+	const screenWidth = window.innerWidth;
+	let pnts = {
+		str: { id: "str", elmt: strElmt },
+		end: { id: "end", elmt: endElmt },
+	};
+	let canvasPrevEvent;
+	let canvasMouseDown = false;
+	let brushSize = 0;
+	let pointSelected;
+
+	updateBoardsSize([100, 100]);
 	updateBrushSize(40);
+	randomizePointsLocation();
 
 	$("#maze-creator-board-size").on("change", function (e) {
-		updateBoardSize(this.value);
+		updateBoardsSize(this.value.split("x"));
 	});
 	$("#maze-creator-brush-size").on("change", function (e) {
 		updateBrushSize(parseInt(this.value));
 	});
 
-	if (screenWidth < 450) {
-		canvas.height = screenWidth - 50;
-		canvas.width = screenWidth - 50;
-	} else {
-		canvas.height = 500;
-		canvas.width = 500;
+	function getXYFromEvent(event) {
+		event.touches = event.touches || [];
+		const x =
+			event.offsetX ||
+			event.touches[0].clientX +
+				document.body.scrollLeft +
+				document.documentElement.scrollLeft -
+				mazeCanvas.offsetLeft;
+		const y =
+			event.offsetY ||
+			event.touches[0].clientY +
+				document.body.scrollTop +
+				document.documentElement.scrollTop -
+				mazeCanvas.offsetTop;
+		return [x, y];
 	}
 
-	canvas.addEventListener("mousemove", onMoveOnCanvas);
-	canvas.addEventListener("touchmove", onMoveOnCanvas);
-	canvas.addEventListener("mousedown", onMouseDownOnCanvas);
-	canvas.addEventListener("mouseup", onMouseUpOnCanvas);
-	canvas.addEventListener("mouseleave", onMouseUpOnCanvas);
-
-	canvas.addEventListener("touchstart", onMouseDownOnCanvas);
-	canvas.addEventListener("touchend", onMouseUpOnCanvas);
-
-	function onMoveOnCanvas(e) {
-		if (mouseDown) {
-			e.touches = e.touches || [];
-			const x =
-				e.offsetX ||
-				e.touches[0].clientX +
-					document.body.scrollLeft +
-					document.documentElement.scrollLeft -
-					canvas.offsetLeft;
-			const y =
-				e.offsetY ||
-				e.touches[0].clientY +
-					document.body.scrollTop +
-					document.documentElement.scrollTop -
-					canvas.offsetTop;
-
-			lastEvent.touches = lastEvent.touches || [];
-			const lastEventX =
-				lastEvent.offsetX ||
-				lastEvent.touches[0].clientX +
-					document.body.scrollLeft +
-					document.documentElement.scrollLeft -
-					canvas.offsetLeft;
-			const lastEventY =
-				lastEvent.offsetY ||
-				lastEvent.touches[0].clientY +
-					document.body.scrollTop +
-					document.documentElement.scrollTop -
-					canvas.offsetTop;
-
-			context.beginPath();
-			context.moveTo(lastEventX, lastEventY);
-			context.lineTo(x, y);
-			context.lineWidth = brushSize;
-			context.lineCap = "round";
-			context.stroke();
-			lastEvent = e;
-		}
+	function moveMazeCanvas(event) {
+		if (!canvasMouseDown) return;
+		const [x, y] = getXYFromEvent(event);
+		const [lastX, lastY] = getXYFromEvent(canvasPrevEvent);
+		canvasCtx.beginPath();
+		canvasCtx.moveTo(lastX, lastY);
+		canvasCtx.lineTo(x, y);
+		canvasCtx.lineWidth = brushSize;
+		canvasCtx.lineCap = "round";
+		canvasCtx.stroke();
+		canvasPrevEvent = event;
 	}
 
-	function onMouseDownOnCanvas(e) {
-		lastEvent = e;
-		mouseDown = true;
+	function downMazeCanvas(event) {
+		pnts.str.elmt.style.pointerEvents = "none";
+		pnts.end.elmt.style.pointerEvents = "none";
+		canvasPrevEvent = event;
+		canvasMouseDown = true;
 	}
-	function onMouseUpOnCanvas() {
-		mouseDown = false;
+
+	function upMazeCanvas(_) {
+		pnts.str.elmt.style.pointerEvents = "auto";
+		pnts.end.elmt.style.pointerEvents = "auto";
+		canvasMouseDown = false;
 	}
+
+	function validatePointXY(x, y) {
+		const inRange =
+			x < mazeCanvas.width - pnts.str.elmt.clientWidth &&
+			y < mazeCanvas.height - pnts.str.elmt.clientHeight;
+		return x >= 0 && y >= 0 && inRange;
+	}
+
+	function movePointsToXY(pnt, x, y) {
+		pnt.elmt.style.top = `${y}px`;
+		pnt.elmt.style.left = `${x}px`;
+	}
+
+	function movePoint(event) {
+		event = event.clientX ? event : event.touches[0];
+		if (!pointSelected) return;
+		pnt = pnts[pointSelected];
+		const x = pnt.elmt.offsetLeft - (pnt.prev.clientX - event.clientX);
+		const y = pnt.elmt.offsetTop - (pnt.prev.clientY - event.clientY);
+		if (!validatePointXY(x, y)) return;
+		movePointsToXY(pnt, x, y);
+		pnt.prev = event;
+	}
+
+	function downPnt(event, pntId) {
+		pnts[pntId].prev = event.clientX ? event : event.touches[0];
+		draggableArea.style.pointerEvents = "auto";
+		pointSelected = pntId;
+	}
+
+	function upPnt(_) {
+		draggableArea.style.pointerEvents = "none";
+		pointSelected = false;
+	}
+
+	function createListeners(element, onDown, onMove, onUp) {
+		element.addEventListener("touchstart", onDown);
+		element.addEventListener("mousedown", onDown);
+		element.addEventListener("mousemove", onMove);
+		element.addEventListener("touchmove", onMove);
+		element.addEventListener("touchend", onUp);
+		element.addEventListener("mouseup", onUp);
+	}
+
+	createListeners(mazeCanvas, downMazeCanvas, moveMazeCanvas, upMazeCanvas);
+	createListeners(pnts.str.elmt, (e) => downPnt(e, "str"), null, upPnt);
+	createListeners(pnts.end.elmt, (e) => downPnt(e, "end"), null, upPnt);
+	createListeners(draggableArea, null, (e) => movePoint(e), null);
 });
