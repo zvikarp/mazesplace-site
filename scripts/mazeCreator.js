@@ -46,16 +46,16 @@ function canvasToArray(canvas, flip) {
 
 function createMaze() {
 	const canvas = document.querySelector("#maze-creator-canvas");
-	const boardSizeSelector = document.getElementById("maze-creator-type");
+	const mazeType = document.getElementById("maze-creator-type");
 	const createButton = document.getElementById("create-maze");
 	const creatingText = document.getElementById("creating-maze");
 	createButton.style.display = "none";
 	creatingText.style.display = "inline";
-	const array = canvasToArray(canvas, boardSizeSelector.selectedIndex == 1);
-	const flag = boardSizeSelector.selectedIndex > 1 ? 1 : 0;
+	const array = canvasToArray(canvas, mazeType.selectedIndex == 1);
+	const flag = mazeType.selectedIndex > 1 ? 1 : 0;
 
-	// const url = "https://mazesplace-server.herokuapp.com/create";
-	const url = "http://127.0.0.1:5000/create";
+	const url = "https://mazesplace-server.herokuapp.com/create";
+	// const url = "http://127.0.0.1:5000/create";
 	const params = {
 		headers: {
 			Accept: "application/json",
@@ -75,47 +75,6 @@ function createMaze() {
 			creatingText.href = objectURL;
 			creatingText.click();
 			logEvent("create_maze", "maze_creator", "maze_creator");
-		})
-		.catch((err) => {
-			console.log(err);
-		})
-		.finally((e) => {
-			createButton.style.display = "inline";
-			creatingText.style.display = "none";
-		});
-}
-/*@ARC*/
-function createMazeWithSpesificSolotion() {
-	const canvas = document.querySelector("#maze-creator-canvas");
-	const createButton = document.getElementById("create-maze");
-	const creatingText = document.getElementById("creating-maze");
-	createButton.style.display = "none";
-	creatingText.style.display = "inline";
-	const array = canvasToArray(canvas);
-	const flag = 1;
-
-	// const url = "https://mazesplace-server.herokuapp.com/create";
-	const url = "http://127.0.0.1:5000/create";
-	const params = {
-		headers: {
-			Accept: "application/json",
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify({ flag, array }),
-		method: "POST",
-	};
-	// window.alert(params.body)
-
-	fetch(url, params)
-		.then(function (response) {
-			return response.blob();
-		})
-		.then(function (avatarAsBlob) {
-			const objectURL = URL.createObjectURL(avatarAsBlob);
-			creatingText.download = "custom-maze.JPEG";
-			creatingText.href = objectURL;
-			creatingText.click();
-			clearCreateMazeCanvas();
 		})
 		.catch((err) => {
 			console.log(err);
