@@ -340,9 +340,21 @@ ul {
   background-position: 100% 50%; }
 
 .section-maze-creator {
-  padding: 10rem 1rem 9rem 1rem;
+  padding: 10rem 20%;
+  background-color: #f0f0f0;
+  text-align: center;
+  width: 100%;
   background-color: #0e0e0e;
   text-align: center; }
+  @media only screen and (max-width: 75em) {
+    .section-maze-creator {
+      padding: 10rem 10%; } }
+  @media only screen and (max-width: 56.25em) {
+    .section-maze-creator {
+      padding: 10rem 5rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .section-maze-creator {
+      padding: 10rem 1rem; } }
   .section-maze-creator__canvas-area {
     padding: 2rem 0; }
   .section-maze-creator__canvases {

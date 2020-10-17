@@ -167,8 +167,10 @@
 
 		<section id="section-maze-creator" class="section-maze-creator">
 			<h2 class="text--white">The Maze Creator</h2>
-			<p class="text--white">Draw a picture and we'll convert it into a maze for you! Just make sure to make it
-				one shape.</p>
+			<p class="text--white">Draw a picture and we'll convert it into a maze for you! </p>
+			<p class="text--white">Drag the "X"s around the
+				canvas, they are the start and end point for the maze. Make sure the shape you draw is all connected and
+				that it covers the "X"s.</p>
 			<div class="section-maze-creator__canvas-area">
 				<div class="section-maze-creator__canvases">
 					<canvas class="section-maze-creator__canvas" id="maze-creator-canvas"></canvas>
@@ -199,9 +201,9 @@
 					<div>
 						Maze type:
 						<select name="maze type" id="maze-creator-type" class="select">
-							<option value="Black to maze">Black to maze</option>
-							<option value="White to maze">White to maze</option>
-							<option value="Solution of maze">Solution of maze</option>
+							<option value="Black to maze">Classic maze</option>
+							<option value="White to maze">Inverted maze</option>
+							<option value="Solution of maze">Hidden maze</option>
 						</select>
 					</div>
 					<h2 class="text--white">|</h2>
@@ -211,7 +213,8 @@
 			<div><a id="creating-maze" class="btn btn--black--clicked">Creating...</a>
 			</div>
 			<div id="create-maze">
-				<p class="text--white section-maze-creator__bottom-text">Click "Create" to download your custom maze.
+				<p class="text--white section-maze-creator__bottom-text">Click "Create Maze" to download your custom
+					maze.
 				</p>
 				<a onclick={createMaze()} class="btn btn--black">Create Maze</a>
 			</div>

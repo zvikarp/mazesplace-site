@@ -3,9 +3,25 @@
 }
 
 .section-maze-creator {
-	padding: 10rem 1rem 9rem 1rem;
+	padding: 10rem 20%;
+	background-color: $color-white;
+	text-align: center;
+	width: 100%;
 	background-color: $color-black;
 	text-align: center;
+
+	@include respond(tab-land) {
+		padding: 10rem 10%;
+	}
+
+	@include respond(tab-port) {
+		padding: 10rem 5rem;
+	}
+
+	@include respond(phone) {
+		padding: 10rem 1rem;
+	}
+	
 
 	&__canvas-area {
 		padding: 2rem 0;
