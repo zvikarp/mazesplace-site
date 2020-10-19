@@ -1,30 +1,45 @@
 name: deploy_to_firebase_hosting
 
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+    push:
+        branches:
+            - master
+    pull_request:
+        branches:
+            - master
 
 jobs:
-  deploy_to_firebase_hosting:
+    build:
+        name: Build
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repo
+              uses: actions/checkout@master
+            - name: Install Dependencies
+              run: npm install
+            - name: Build
+              run: npm run build
+            - name: Archive Production Artifact
+              uses: actions/upload-artifact@master
+              with:
+                  name: dist
+                  path: dist
 
-    runs-on: ubuntu-latest
-    
-    steps:
-      - uses: actions/checkout@master
-      - name: Build
-        uses: actions/setup-node@v1
-        with:
-            node-version: '12.x'
-      - run: npm install
-      - run: npm run build
-      
-      - name: Deploy to Firebase
-        uses: w9jds/firebase-action@master
-        with:
-          args: deploy --only hosting:mazesplace-site
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+    deploy:
+        name: Deploy
+        needs: build
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repo
+              uses: actions/checkout@master
+            - name: Download Artifact
+              uses: actions/download-artifact@master
+              with:
+                  name: dist
+                  path: dist
+            - name: Deploy to Firebase
+              uses: w9jds/firebase-action@master
+              with:
+                  args: deploy --only hosting:mazesplace-site
+              env:
+                  FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
