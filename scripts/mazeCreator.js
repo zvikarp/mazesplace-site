@@ -8,7 +8,8 @@ function clearCreateMazeCanvas() {
 function getCanvasSize() {
 	const screenWidth = window.innerWidth;
 	if (screenWidth < 450) return screenWidth - 50;
-	return 500;
+	else if (screenWidth < 1000) return 500;
+	return 700;
 }
 
 function getBoardSize() {

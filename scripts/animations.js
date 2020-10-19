@@ -52,9 +52,17 @@ $(document).ready(function () {
 	headerFlashlight.addEventListener("touchmove", updateFlashlight);
 
 	// maze creator
+
+	function getCanvasSize() {
+		const screenWidth = window.innerWidth;
+		if (screenWidth < 450) return screenWidth - 50;
+		else if (screenWidth < 1000) return 500;
+		return 700;
+	}
+
 	function updateBoardsSize(newSize) {
 		const ratio = newSize[1] / newSize[0];
-		const newWidth = screenWidth < 450 ? screenWidth - 50 : 500;
+		const newWidth = getCanvasSize();
 		const newHeight = newWidth * ratio;
 		mazeCanvas.height = newHeight;
 		mazeCanvas.width = newWidth;
