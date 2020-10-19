@@ -14,8 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout the repository
-        uses: actions/checkout@master
+	  - uses: actions/checkout@master
+      - name: Build
+	    uses: actions/setup-node@v1
+      - run: npm install
+      - run: npm run build
       
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
