@@ -382,10 +382,13 @@ ul {
     padding-bottom: 2rem; }
   .section-maze-creator__action-buttons {
     justify-content: center;
-    padding-top: 0.5rem;
+    padding: 0.5rem 1rem 0 1rem;
     display: flex; }
     .section-maze-creator__action-buttons > * {
       margin: 0 1rem; }
+      @media only screen and (max-width: 37.5em) {
+        .section-maze-creator__action-buttons > * {
+          margin: 0 0.2rem; } }
     .section-maze-creator__action-buttons * {
       color: #f0f0f0;
       font-size: 1.5rem; }

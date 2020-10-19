@@ -61,10 +61,15 @@
 
 	&__action-buttons {
 		justify-content: center;
-		padding-top: 0.5rem;
+		// padding-top: 0.5rem;
+		padding: 0.5rem 1rem 0 1rem;
 		display: flex;
 		& > * {
 			margin: 0 1rem;
+
+			@include respond(phone) {
+				margin: 0 0.2rem;
+			}
 		}
 		& * {
 			color: $color-white;
