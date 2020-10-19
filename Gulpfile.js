@@ -78,7 +78,7 @@ gulp.task("html", function () {
 		.pipe(gulp.dest(paths.html.dest));
 });
 
-//Sets up the live browser sync.
+// Sets up the live browser sync.
 gulp.task("browser-sync", function sync(done) {
 	bs.init({
 		server: {
@@ -106,7 +106,7 @@ gulp.task(
 	gulp.series("styles", "scripts", "html", "assets", "rootConfig")
 );
 
-//First rebuilds the output then triggers a reload of the browser.
+// First rebuilds the output then triggers a reload of the browser.
 gulp.task(
 	"rebuild",
 	gulp.series("build", function rebuild(done) {
