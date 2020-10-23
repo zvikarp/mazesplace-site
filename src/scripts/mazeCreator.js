@@ -81,12 +81,11 @@ function createMaze() {
 	createButton.style.display = "none";
 	creatingText.style.display = "inline";
 
-	const url = "https://mazesplace-server.herokuapp.com/create";
-	// const url = "http://127.0.0.1:5000/create";
+	const url = `${config.server}create`;
 	const params = {
 		headers: {
-			Accept: "application/json",
-			"Content-Type": "application/json",
+			Accept: "text/plain",
+			"Content-Type": "text/plain",
 		},
 		body: JSON.stringify({ array, flag, points: [strPnt, endPnt] }),
 		method: "POST",

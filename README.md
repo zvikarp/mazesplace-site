@@ -3,8 +3,7 @@
 ## Getting Started
 
 -   run `npm install`
--   run `npm start`, if you have access to the firebase project, run
-    `firebase serve --only hosting --port=8080`.
+-   run `npm start`
 
 ## Development
 

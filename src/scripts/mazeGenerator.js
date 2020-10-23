@@ -4,13 +4,13 @@ function generateWordMaze() {
 	const mazeText = document
 		.getElementById("maze-generator-input")
 		.value.toString();
-	const url = "https://mazesplace-server.herokuapp.com/generate";
-	// const url = "http://127.0.0.1:5000/generate";
+
+	const url = `${config.server}generate`;
 	const data = { text: mazeText };
 	const params = {
 		headers: {
-			Accept: "application/json",
-			"Content-Type": "application/json",
+			Accept: "text/plain",
+			"Content-Type": "text/plain",
 		},
 		body: JSON.stringify(data),
 		method: "POST",

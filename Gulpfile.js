@@ -6,6 +6,31 @@ const htmlmin = require("gulp-htmlmin");
 const sass = require("gulp-sass");
 const terser = require("gulp-terser");
 const bs = require("browser-sync").create();
+const file = require("gulp-file");
+const config = require("./config");
+
+// fetch command line arguments
+const arg = ((argList) => {
+	let arg = {},
+		a,
+		opt,
+		thisOpt,
+		curOpt;
+	for (a = 0; a < argList.length; a++) {
+		thisOpt = argList[a].trim();
+		opt = thisOpt.replace(/^\-+/, "");
+		if (opt === thisOpt) {
+			if (curOpt) arg[curOpt] = opt;
+			curOpt = null;
+		} else {
+			curOpt = opt;
+			arg[curOpt] = true;
+		}
+	}
+	return arg;
+})(process.argv);
+
+const env = arg.env || "dev";
 
 // paths
 const paths = {
@@ -25,22 +50,32 @@ const paths = {
 		src: "src/assets/**/*",
 		dest: "dist/assets/",
 	},
-	rootConfig: {
-		src: "src/rootConfigFiles/*",
+	config: {
+		file: "config.js",
 		dest: "dist/",
 	},
 };
 
+// Gulp task to get config file
+gulp.task("config", function () {
+	const constantsOpts = config[env];
+	let constantsObjString = "";
+	for (key in constantsOpts) {
+		let value = constantsOpts[key];
+		if (typeof value === "string") {
+			value = `'${value}'`;
+		}
+		constantsObjString += `\n${key}: ${value.toString()},`;
+	}
+	const codeString = `const config = { ${constantsObjString} \n}`;
+	return file(paths.config.file, codeString, { src: true }).pipe(
+		gulp.dest(paths.config.dest)
+	);
+});
+
 // Copies the assets to the distribution.
 gulp.task("assets", function buildImages() {
 	return gulp.src(paths.assets.src).pipe(gulp.dest(paths.assets.dest));
-});
-
-// Copies the root config files to the distribution.
-gulp.task("rootConfig", function buildImages() {
-	return gulp
-		.src(paths.rootConfig.src)
-		.pipe(gulp.dest(paths.rootConfig.dest));
 });
 
 // Gulp task to minify CSS files
@@ -90,10 +125,10 @@ gulp.task("browser-sync", function sync(done) {
 
 gulp.task("watch", function watch(done) {
 	gulp.watch(paths.assets.src, gulp.series("rebuild"));
-	gulp.watch(paths.rootConfig.src, gulp.series("rebuild"));
 	gulp.watch(paths.js.src, gulp.series("rebuild"));
 	gulp.watch(paths.html.src, gulp.series("rebuild"));
 	gulp.watch(paths.css.src, gulp.series("rebuild"));
+	gulp.watch(paths.config.file, gulp.series("rebuild"));
 	done();
 });
 
@@ -103,7 +138,7 @@ gulp.task("clean", () => del(["dist"]));
 // Gulp task to minify all files
 gulp.task(
 	"build",
-	gulp.series("styles", "scripts", "html", "assets", "rootConfig")
+	gulp.series("styles", "scripts", "html", "assets", "config")
 );
 
 // First rebuilds the output then triggers a reload of the browser.
