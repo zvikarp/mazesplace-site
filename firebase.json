@@ -1,6 +1,6 @@
 {
 	"hosting": {
-		"public": "/",
+		"public": "dist",
 		"site": "mazesplace-site",
 		"ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
 		"headers": [

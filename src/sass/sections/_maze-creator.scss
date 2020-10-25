@@ -1,0 +1,94 @@
+#section-maze-creator {
+	background-position: 100% 50%;
+}
+
+.section-maze-creator {
+	padding: 10rem 20%;
+	background-color: $color-white;
+	text-align: center;
+	width: 100%;
+	background-color: $color-black;
+	text-align: center;
+
+	@include respond(tab-land) {
+		padding: 10rem 10%;
+	}
+
+	@include respond(tab-port) {
+		padding: 10rem 5rem;
+	}
+
+	@include respond(phone) {
+		padding: 10rem 1rem;
+	}
+
+
+	&__canvas-area {
+		padding: 2rem 0;
+	}
+
+	&__canvases {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+
+	&__canvas {
+		margin: 0 auto;
+		display: block;
+		cursor: crosshair;
+		-ms-touch-action: none;
+		touch-action: none;
+		grid-row-start: 1;
+		grid-column-start: 1;
+	}
+
+	&__point {
+		pointer-events: auto;
+		position: absolute;
+		font-size: 8rem;
+		line-height: 4rem;
+		cursor: move;
+		&:after {
+			content: "\d7";
+			-webkit-text-stroke-width: 2px;
+			-webkit-text-stroke-color: $color-white;
+		}
+	}
+
+	&__bottom-text {
+		padding-bottom: 2rem;
+	}
+
+	&__action-buttons {
+		justify-content: center;
+		// padding-top: 0.5rem;
+		padding: 0.5rem 1rem 0 1rem;
+		display: flex;
+		& > * {
+			margin: 0 1rem;
+
+			@include respond(phone) {
+				margin: 0 0.2rem;
+			}
+		}
+		& * {
+			color: $color-white;
+			font-size: 1.5rem;
+		}
+	}
+}
+
+#creating-maze {
+	display: none;
+}
+
+#maze-creator-canvas {
+	z-index: 0;
+	background: $color-white;
+}
+
+#maze-creator-draggable {
+	z-index: 1;
+	pointer-events: none;
+	position: relative;
+}
