@@ -1,5 +1,8 @@
 document.addEventListener("readystatechange", (event) => {
 	if (event.target.readyState === "interactive") {
+
+		alert("hi 1");
+
 		const appSection = document.createElement("div");
 
 		const html = appSection.innerHTML(`
