@@ -1,4 +1,11 @@
+alert("hi 3");
+
 document.addEventListener("readystatechange", (event) => {
+
+	alert("hi 2");
+
+	console.log( event.target.readyState)
+
 	if (event.target.readyState === "interactive") {
 
 		alert("hi 1");
