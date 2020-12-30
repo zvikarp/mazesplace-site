@@ -1,0 +1,85 @@
+<script type="text/javascript">
+
+	document.addEventListener("readystatechange", (event) => {
+
+		if (event.target.readyState === "interactive") {
+
+			const appSection = document.createElement("div");
+			appSection.innerHTML = `
+				<style>
+					.app-section {
+						text-align: center;
+					}
+					.google-play-button {
+						max-width: 200px;
+					}
+				</style>
+				<div class="app-section" data-block="app">
+					<div>
+						<h2>Get the mobile app</h2>
+						<p>Along with our mazes, we have a unique app that elevates your mazes to the next level. There is a real-time machine learning maze algorithm built into it, so you can simply open the app, point the camera at the maze and you are greeted with all the information about the maze. In addition, the app provides you with some tips and tricks (and periodically hidden exclusive deals). Don't have an android phone - no worries, all instructions are sent to you by email when you purchase a maze.</p>
+						<a href='https://play.google.com/store/apps/details?id=com.zektec.mazesplace_app&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img class="google-play-button" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>		
+					</div>
+				</div>
+			`;
+			const main = document.getElementsByClassName("tile-store")[0];
+			main.appendChild(appSection);
+
+			const aboutSection = document.createElement("div");
+			aboutSection.innerHTML = `
+				<style>
+					.about-section {
+						text-align: center;
+					}
+				</style>
+				<div class="about-section">
+					<p>We want to hear from you. Please feel free to email us, or contact us on any of the social platforms, we do our best to reply within 1 business day.</p>
+				</div>
+			`;
+			const abountSectionData = document.querySelectorAll(".contacts .data")[0];
+			abountSectionData.prepend(aboutSection);
+
+			const newsletterSection = document.createElement("div");
+			newsletterSection.innerHTML = `
+			<style>
+				.signup-form {
+					max-width: 500px;
+					padding: 20px 50px 20px;
+					margin: 0 auto;
+					text-align: center;
+				}
+
+				@media only screen and (max-width:600) {
+					.signup-form {
+						max-width: 300px;
+						padding: 5px 20px 5px;
+						margin: 0 auto;
+						text-align: center;
+					}
+				}
+
+				.subscribe-button {
+					padding-top: 25px !important;
+				}
+			</style>
+			<form class="signup-form"
+			action="https://mazesplace.us16.list-manage.com/subscribe/post?u=3589b7b2db19d2cf1071fbe0f&amp;id=b8454b078e"
+			method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+				<p>Signup to Mazesplace newsletter</p>
+				<div class="ec-size"><div class="ec-store"><div class="form-control--primary">
+					<input type="email" value="" name="EMAIL" class="form-control__text"
+							id="mce-EMAIL" placeholder="email address" required>
+					<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+							name="b_3589b7b2db19d2cf1071fbe0f_b8454b078e" tabindex="-1" value=""></div>
+							<div class="subscribe-button">
+								<input type="submit" value="Subscribe" name="subscribe"
+							class="form-control__button"></div>
+				</div>
+			</form>
+			`;
+
+			const contacts = document.getElementById("contacts");
+			contacts.appendChild(newsletterSection);
+		}
+	});
+</script>
