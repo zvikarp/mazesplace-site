@@ -13,30 +13,30 @@
 	-ms-touch-action: none;
 	touch-action: none;
 
-	&__topbar {
-		top: 2rem;
-		left: 4rem;
-		position: fixed;
+	// &__topbar {
+	// 	top: 2rem;
+	// 	left: 4rem;
+	// 	position: fixed;
 
-		@include respond(phone) {
-			top: 1rem;
-			left: 0.5rem;
-			right: 0.5rem;
-			width: 100%;
-			text-align: center;
-		}
+	// 	@include respond(phone) {
+	// 		top: 1rem;
+	// 		left: 0.5rem;
+	// 		right: 0.5rem;
+	// 		width: 100%;
+	// 		text-align: center;
+	// 	}
 
-		&__button {
-			border: none;
-			&:not(:last-child) {
-				margin-right: 1rem;
+	// 	&__button {
+	// 		border: none;
+	// 		&:not(:last-child) {
+	// 			margin-right: 1rem;
 
-				@include respond(phone) {
-					margin-right: 0;
-				}
-			}
-		}
-	}
+	// 			@include respond(phone) {
+	// 				margin-right: 0;
+	// 			}
+	// 		}
+	// 	}
+	// }
 
 	&__logo-box {
 		align-self: center;
@@ -49,7 +49,9 @@
 	}
 
 	&__button {
+		margin: 0 1rem;
 		padding: 4rem 0;
+		text-align: center;
 		align-self: flex-end;
 	}
 

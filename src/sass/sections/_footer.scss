@@ -1,12 +1,14 @@
-.fotter {
+.footer {
 	padding-top: 2rem;
 	padding-bottom: 4rem;
 	background-color: $color-black;
 	color: $color-white;
 	text-align: center;
+	 & * {
+		padding: 1rem 0;
+	 }
 
 	&__legal {
-		padding-top: 0.5rem;
 		* {
 			padding: 0 0.5rem;
 		}
