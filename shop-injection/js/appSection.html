@@ -4,9 +4,18 @@
 
 		if (event.target.readyState === "interactive") {
 
+			document.getElementsByClassName('cover__content-inner')[0]
+			.addEventListener('click', function (event) {
+				window.location.href = '/';
+			});
+
 			const appSection = document.createElement("div");
 			appSection.innerHTML = `
 				<style>
+					.cover__content-inner {
+						cursor: pointer;
+					}
+
 					.app-section {
 						text-align: center;
 					}
